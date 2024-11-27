@@ -34,8 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -63,8 +63,8 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtpass);
+            this.panel2.Controls.Add(this.txtusuario);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(83, 53);
@@ -83,6 +83,7 @@
             this.btnentrar.TabIndex = 7;
             this.btnentrar.Text = "Iniciar Sesión";
             this.btnentrar.UseVisualStyleBackColor = false;
+            this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
             // label4
             // 
@@ -112,19 +113,23 @@
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 4;
             // 
-            // textBox2
+            // txtpass
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 413);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtpass.Location = new System.Drawing.Point(174, 413);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
+            this.txtpass.Size = new System.Drawing.Size(222, 22);
+            this.txtpass.TabIndex = 3;
+            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
             // 
-            // textBox1
+            // txtusuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 319);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtusuario.Location = new System.Drawing.Point(174, 319);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(220, 22);
+            this.txtusuario.TabIndex = 2;
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
+            this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
             // 
             // label1
             // 
@@ -136,10 +141,10 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::farmabit.Properties.Resources.Blue_Gradient_Modern_Simple_Pharmacy_Logo__1__removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(81, -17);
+            this.pictureBox2.Image = global::farmabit.Properties.Resources.logoo;
+            this.pictureBox2.Location = new System.Drawing.Point(174, 40);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(410, 386);
+            this.pictureBox2.Size = new System.Drawing.Size(218, 220);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -162,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(728, 631);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -180,8 +186,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtpass;
+        private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

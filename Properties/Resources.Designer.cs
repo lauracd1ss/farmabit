@@ -83,9 +83,29 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_Gradient_Modern_Simple_Pharmacy_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Blue Gradient Modern Simple Pharmacy Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Gradient_Modern_Simple_Pharmacy_Logo__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Blue_Gradient_Modern_Simple_Pharmacy_Logo__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap busqueda {
+            get {
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -98,6 +118,66 @@ namespace farmabit.Properties {
                 object obj = ResourceManager.GetObject("Contactos_Mane_Twitter_Azul_Linea_Punteada_Línea_Icono_PNG__dibujos__Línea_De_Ico" +
                         "nos__Iconos_Azules__Pájaro_PNG_y_Vector_para_Descargar_Gratis___Pngtree-removebg" +
                         "-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo {
+            get {
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondos {
+            get {
+                object obj = ResourceManager.GetObject("fondos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo1 {
+            get {
+                object obj = ResourceManager.GetObject("logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoo {
+            get {
+                object obj = ResourceManager.GetObject("logoo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoofinal {
+            get {
+                object obj = ResourceManager.GetObject("logoofinal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

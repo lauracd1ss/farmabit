@@ -15,6 +15,29 @@ namespace farmabit
         public Form2()
         {
             InitializeComponent();
+            label3.Text = "BIENVENID@ "+Form1.UsuarioActual;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Descuentos dc = new Descuentos();
+            dc.Show();
         }
     }
 }
