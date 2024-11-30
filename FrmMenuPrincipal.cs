@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace farmabit
 {
-    public partial class Form2 : Form
+    public partial class FrmMenuPrincipal : Form
     {
-        public Form2()
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
-            label3.Text = "BIENVENID@ "+Form1.UsuarioActual;
+            label1.Text = "BIENVENID@ "+FrmLogin.UsuarioActual;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,5 +39,6 @@ namespace farmabit
             Descuentos dc = new Descuentos();
             dc.Show();
         }
+
     }
 }

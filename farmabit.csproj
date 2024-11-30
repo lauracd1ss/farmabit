@@ -79,17 +79,17 @@
     <Compile Include="FidelizarCliente.Designer.cs">
       <DependentUpon>FidelizarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Mant_producto.cs">
       <SubType>Form</SubType>
@@ -108,25 +108,20 @@
     <EmbeddedResource Include="FidelizarCliente.resx">
       <DependentUpon>FidelizarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mant_producto.resx">
       <DependentUpon>Mant_producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="boseDataSet.xsc">
       <DependentUpon>boseDataSet.xsd</DependentUpon>
     </None>
@@ -164,6 +159,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -208,6 +208,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedor.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empleado.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedor1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compra.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caja.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Movimiento.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Consulta.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reportes.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Consultas.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Descuento.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

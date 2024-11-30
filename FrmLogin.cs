@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace farmabit
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
         public static string UsuarioActual { get; private set; }
 
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace farmabit
                 {
                     UsuarioActual = txtusuario.Text;
                     this.Hide();
-                    Form2 vp = new Form2();
+                    FrmMenuPrincipal vp = new FrmMenuPrincipal();
                     vp.Show();
                 }
                 else
@@ -67,7 +67,7 @@ namespace farmabit
                 {
                     UsuarioActual = txtusuario.Text;
                     this.Hide();
-                    Form2 vp = new Form2();
+                    FrmMenuPrincipal vp = new FrmMenuPrincipal();
                     vp.Show();
                 }
                 else
