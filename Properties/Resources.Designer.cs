@@ -83,6 +83,16 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altice {
+            get {
+                object obj = ResourceManager.GetObject("altice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Gradient_Modern_Simple_Pharmacy_Logo {
             get {
                 object obj = ResourceManager.GetObject("Blue Gradient Modern Simple Pharmacy Logo", resourceCulture);
@@ -116,6 +126,26 @@ namespace farmabit.Properties {
         internal static System.Drawing.Bitmap Caja {
             get {
                 object obj = ResourceManager.GetObject("Caja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cajero_automatico {
+            get {
+                object obj = ResourceManager.GetObject("cajero-automatico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Claro_Logo_2004 {
+            get {
+                object obj = ResourceManager.GetObject("Claro-Logo-2004", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,9 +205,29 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coraasan {
+            get {
+                object obj = ResourceManager.GetObject("coraasan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Descuento {
             get {
                 object obj = ResourceManager.GetObject("Descuento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EDENORTE {
+            get {
+                object obj = ResourceManager.GetObject("EDENORTE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -265,6 +315,26 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mas {
+            get {
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mas1 {
+            get {
+                object obj = ResourceManager.GetObject("mas1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Movimiento {
             get {
                 object obj = ResourceManager.GetObject("Movimiento", resourceCulture);
@@ -338,6 +408,16 @@ namespace farmabit.Properties {
         internal static System.Drawing.Bitmap Ventas {
             get {
                 object obj = ResourceManager.GetObject("Ventas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viva {
+            get {
+                object obj = ResourceManager.GetObject("viva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

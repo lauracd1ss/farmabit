@@ -61,6 +61,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>boseDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CajaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CajaForm.Designer.cs">
+      <DependentUpon>CajaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComprasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComprasForm.Designer.cs">
+      <DependentUpon>ComprasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaDes_producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,8 +109,26 @@
     <Compile Include="Mant_producto.Designer.cs">
       <DependentUpon>Mant_producto.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosServiciosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosServiciosForm.Designer.cs">
+      <DependentUpon>PagosServiciosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasForm.Designer.cs">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CajaForm.resx">
+      <DependentUpon>CajaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComprasForm.resx">
+      <DependentUpon>ComprasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDes_producto.resx">
       <DependentUpon>ConsultaDes_producto.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,10 +147,16 @@
     <EmbeddedResource Include="Mant_producto.resx">
       <DependentUpon>Mant_producto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagosServiciosForm.resx">
+      <DependentUpon>PagosServiciosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasForm.resx">
+      <DependentUpon>VentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="boseDataSet.xsc">
       <DependentUpon>boseDataSet.xsd</DependentUpon>
@@ -259,6 +295,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Descuento.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajero-automatico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coraasan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDENORTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Claro-Logo-2004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\altice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viva.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
