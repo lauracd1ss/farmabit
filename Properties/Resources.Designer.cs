@@ -93,6 +93,16 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap atras {
+            get {
+                object obj = ResourceManager.GetObject("atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Gradient_Modern_Simple_Pharmacy_Logo {
             get {
                 object obj = ResourceManager.GetObject("Blue Gradient Modern Simple Pharmacy Logo", resourceCulture);

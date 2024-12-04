@@ -115,14 +115,68 @@
     <Compile Include="Mant_producto.Designer.cs">
       <DependentUpon>Mant_producto.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpcionesTLFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpcionesTLFForm.Designer.cs">
+      <DependentUpon>OpcionesTLFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoCORAASANForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoCORAASANForm.Designer.cs">
+      <DependentUpon>PagoCORAASANForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoEDENORTEForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoEDENORTEForm.Designer.cs">
+      <DependentUpon>PagoEDENORTEForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagosServiciosForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PagosServiciosForm.Designer.cs">
       <DependentUpon>PagosServiciosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoTLFAlticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoTLFAlticeForm.Designer.cs">
+      <DependentUpon>PagoTLFAlticeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoTLFClaroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoTLFClaroForm.Designer.cs">
+      <DependentUpon>PagoTLFClaroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoTLFVivaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoTLFVivaForm.Designer.cs">
+      <DependentUpon>PagoTLFVivaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecargaAlticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecargaAlticeForm.Designer.cs">
+      <DependentUpon>RecargaAlticeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecargaCLaroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecargaCLaroForm.Designer.cs">
+      <DependentUpon>RecargaCLaroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecargaVivaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecargaVivaForm.Designer.cs">
+      <DependentUpon>RecargaVivaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,13 +210,40 @@
     <EmbeddedResource Include="Mant_producto.resx">
       <DependentUpon>Mant_producto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OpcionesTLFForm.resx">
+      <DependentUpon>OpcionesTLFForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoCORAASANForm.resx">
+      <DependentUpon>PagoCORAASANForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoEDENORTEForm.resx">
+      <DependentUpon>PagoEDENORTEForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagosServiciosForm.resx">
       <DependentUpon>PagosServiciosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoTLFAlticeForm.resx">
+      <DependentUpon>PagoTLFAlticeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoTLFClaroForm.resx">
+      <DependentUpon>PagoTLFClaroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoTLFVivaForm.resx">
+      <DependentUpon>PagoTLFVivaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecargaAlticeForm.resx">
+      <DependentUpon>RecargaAlticeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecargaCLaroForm.resx">
+      <DependentUpon>RecargaCLaroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecargaVivaForm.resx">
+      <DependentUpon>RecargaVivaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentasForm.resx">
       <DependentUpon>VentasForm.cs</DependentUpon>
@@ -328,6 +409,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\viva.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
