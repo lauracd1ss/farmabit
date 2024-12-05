@@ -55,7 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.puntos_transaccionesTableAdapter = new farmabit.boseDataSet2TableAdapters.Puntos_transaccionesTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +78,7 @@
             this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntos_transaccionesTableAdapter = new farmabit.boseDataSet2TableAdapters.Puntos_transaccionesTableAdapter();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -344,10 +344,6 @@
             this.panel2.Size = new System.Drawing.Size(1083, 93);
             this.panel2.TabIndex = 2;
             // 
-            // puntos_transaccionesTableAdapter
-            // 
-            this.puntos_transaccionesTableAdapter.ClearBeforeFill = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
@@ -551,6 +547,10 @@
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(234, 36);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
+            // puntos_transaccionesTableAdapter
+            // 
+            this.puntos_transaccionesTableAdapter.ClearBeforeFill = true;
+            // 
             // FidelizarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -558,6 +558,7 @@
             this.ClientSize = new System.Drawing.Size(1027, 630);
             this.Controls.Add(this.panel1);
             this.Name = "FidelizarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FidelizarCliente";
             this.Load += new System.EventHandler(this.FidelizarCliente_Load);
             this.panel1.ResumeLayout(false);

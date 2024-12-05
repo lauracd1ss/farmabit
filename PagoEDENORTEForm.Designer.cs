@@ -473,6 +473,7 @@
             this.ClientSize = new System.Drawing.Size(835, 396);
             this.Controls.Add(this.panel1);
             this.Name = "PagoEDENORTEForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PagoEDENORTEForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

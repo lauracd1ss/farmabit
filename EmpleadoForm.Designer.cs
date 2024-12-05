@@ -39,6 +39,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxsucur = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBoxpuesto = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -105,10 +109,6 @@
             this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBoxpuesto = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.comboBoxsucur = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -293,6 +293,56 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Empleado";
+            // 
+            // comboBoxsucur
+            // 
+            this.comboBoxsucur.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxsucur.FormattingEnabled = true;
+            this.comboBoxsucur.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino",
+            "No decirlo"});
+            this.comboBoxsucur.Location = new System.Drawing.Point(836, 294);
+            this.comboBoxsucur.Name = "comboBoxsucur";
+            this.comboBoxsucur.Size = new System.Drawing.Size(166, 24);
+            this.comboBoxsucur.TabIndex = 63;
+            this.comboBoxsucur.Text = "Seleccione";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label24.Location = new System.Drawing.Point(745, 293);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(85, 25);
+            this.label24.TabIndex = 62;
+            this.label24.Text = "Sucursal:";
+            // 
+            // comboBoxpuesto
+            // 
+            this.comboBoxpuesto.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxpuesto.FormattingEnabled = true;
+            this.comboBoxpuesto.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino",
+            "No decirlo"});
+            this.comboBoxpuesto.Location = new System.Drawing.Point(825, 259);
+            this.comboBoxpuesto.Name = "comboBoxpuesto";
+            this.comboBoxpuesto.Size = new System.Drawing.Size(166, 24);
+            this.comboBoxpuesto.TabIndex = 61;
+            this.comboBoxpuesto.Text = "Seleccione";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label23.Location = new System.Drawing.Point(745, 258);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(74, 25);
+            this.label23.TabIndex = 60;
+            this.label23.Text = "Puesto:";
             // 
             // label20
             // 
@@ -940,56 +990,6 @@
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(234, 36);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
-            // comboBoxpuesto
-            // 
-            this.comboBoxpuesto.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxpuesto.FormattingEnabled = true;
-            this.comboBoxpuesto.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino",
-            "No decirlo"});
-            this.comboBoxpuesto.Location = new System.Drawing.Point(825, 259);
-            this.comboBoxpuesto.Name = "comboBoxpuesto";
-            this.comboBoxpuesto.Size = new System.Drawing.Size(166, 24);
-            this.comboBoxpuesto.TabIndex = 61;
-            this.comboBoxpuesto.Text = "Seleccione";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label23.Location = new System.Drawing.Point(745, 258);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(74, 25);
-            this.label23.TabIndex = 60;
-            this.label23.Text = "Puesto:";
-            // 
-            // comboBoxsucur
-            // 
-            this.comboBoxsucur.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxsucur.FormattingEnabled = true;
-            this.comboBoxsucur.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino",
-            "No decirlo"});
-            this.comboBoxsucur.Location = new System.Drawing.Point(836, 294);
-            this.comboBoxsucur.Name = "comboBoxsucur";
-            this.comboBoxsucur.Size = new System.Drawing.Size(166, 24);
-            this.comboBoxsucur.TabIndex = 63;
-            this.comboBoxsucur.Text = "Seleccione";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label24.Location = new System.Drawing.Point(745, 293);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(85, 25);
-            this.label24.TabIndex = 62;
-            this.label24.Text = "Sucursal:";
-            // 
             // EmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -997,6 +997,7 @@
             this.ClientSize = new System.Drawing.Size(1107, 664);
             this.Controls.Add(this.panel1);
             this.Name = "EmpleadoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmpleadoForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

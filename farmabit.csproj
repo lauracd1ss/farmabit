@@ -79,11 +79,47 @@
     <Compile Include="ComprasForm.Designer.cs">
       <DependentUpon>ComprasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaClienteForm.Designer.cs">
+      <DependentUpon>ConsultaClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaComprasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaComprasForm.Designer.cs">
+      <DependentUpon>ConsultaComprasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaEmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaEmpleadoForm.Designer.cs">
+      <DependentUpon>ConsultaEmpleadoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaDes_producto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaDes_producto.Designer.cs">
       <DependentUpon>ConsultaDes_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProductoForm.Designer.cs">
+      <DependentUpon>ConsultaProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProveedorForm.Designer.cs">
+      <DependentUpon>ConsultaProveedorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaVentasForm.Designer.cs">
+      <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Descuentos.cs">
       <SubType>Form</SubType>
@@ -210,8 +246,26 @@
     <EmbeddedResource Include="ComprasForm.resx">
       <DependentUpon>ComprasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaClienteForm.resx">
+      <DependentUpon>ConsultaClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaComprasForm.resx">
+      <DependentUpon>ConsultaComprasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaEmpleadoForm.resx">
+      <DependentUpon>ConsultaEmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDes_producto.resx">
       <DependentUpon>ConsultaDes_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProductoForm.resx">
+      <DependentUpon>ConsultaProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProveedorForm.resx">
+      <DependentUpon>ConsultaProveedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVentasForm.resx">
+      <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Descuentos.resx">
       <DependentUpon>Descuentos.cs</DependentUpon>

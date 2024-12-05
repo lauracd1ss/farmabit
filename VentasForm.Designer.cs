@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -105,7 +106,6 @@
             this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -380,6 +380,16 @@
             this.label17.Size = new System.Drawing.Size(202, 31);
             this.label17.TabIndex = 11;
             this.label17.Text = "REALIZAR VENTA";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Location = new System.Drawing.Point(734, 172);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(147, 22);
+            this.maskedTextBox1.TabIndex = 21;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label4
             // 
@@ -906,16 +916,6 @@
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(234, 36);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(734, 172);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(147, 22);
-            this.maskedTextBox1.TabIndex = 21;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
             // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -923,6 +923,7 @@
             this.ClientSize = new System.Drawing.Size(1095, 825);
             this.Controls.Add(this.panel1);
             this.Name = "VentasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentasForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

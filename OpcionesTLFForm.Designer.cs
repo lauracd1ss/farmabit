@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(609, 323);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::farmabit.Properties.Resources.atras;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(529, 268);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 50);
+            this.button2.TabIndex = 30;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(314, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(271, 180);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "PAGO TELEFONO";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button7.Location = new System.Drawing.Point(29, 82);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(268, 180);
+            this.button7.TabIndex = 28;
+            this.button7.Text = "RECARGA";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -71,40 +105,6 @@
             this.label17.TabIndex = 11;
             this.label17.Text = "SELECCIONE SERVICIO";
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(29, 82);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(268, 180);
-            this.button7.TabIndex = 28;
-            this.button7.Text = "RECARGA";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(314, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 180);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "PAGO TELEFONO";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::farmabit.Properties.Resources.atras;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(529, 268);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 50);
-            this.button2.TabIndex = 30;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // OpcionesTLFForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,6 +112,7 @@
             this.ClientSize = new System.Drawing.Size(609, 323);
             this.Controls.Add(this.panel1);
             this.Name = "OpcionesTLFForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpcionesTLFForm";
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
