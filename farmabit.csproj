@@ -657,6 +657,7 @@
     <None Include="Resources\atras.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\dinero.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

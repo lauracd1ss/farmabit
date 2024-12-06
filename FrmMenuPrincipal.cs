@@ -40,5 +40,9 @@ namespace farmabit
             dc.Show();
         }
 
+        private void descuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
