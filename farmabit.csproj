@@ -120,6 +120,12 @@
     <Compile Include="ConsultaClienteForm.Designer.cs">
       <DependentUpon>ConsultaClienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaCompañiaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCompañiaForm.Designer.cs">
+      <DependentUpon>ConsultaCompañiaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaComprasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="ConsultaProveedorForm.Designer.cs">
       <DependentUpon>ConsultaProveedorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaUsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaUsuariosForm.Designer.cs">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaVentasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     </Compile>
     <Compile Include="FidelizarCliente.Designer.cs">
       <DependentUpon>FidelizarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -319,6 +337,12 @@
     <Compile Include="REPORTEPROVEEDOR.Designer.cs">
       <DependentUpon>REPORTEPROVEEDOR.cs</DependentUpon>
     </Compile>
+    <Compile Include="SegurosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SegurosForm.Designer.cs">
+      <DependentUpon>SegurosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VentasForm.cs">
       <SubType>Form</SubType>
@@ -338,6 +362,9 @@
     <EmbeddedResource Include="ConsultaClienteForm.resx">
       <DependentUpon>ConsultaClienteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompañiaForm.resx">
+      <DependentUpon>ConsultaCompañiaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaComprasForm.resx">
       <DependentUpon>ConsultaComprasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +380,9 @@
     <EmbeddedResource Include="ConsultaProveedorForm.resx">
       <DependentUpon>ConsultaProveedorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaUsuariosForm.resx">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaVentasForm.resx">
       <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FidelizarCliente.resx">
       <DependentUpon>FidelizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -442,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteProovedorForm.resx">
       <DependentUpon>ReporteProovedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegurosForm.resx">
+      <DependentUpon>SegurosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentasForm.resx">
       <DependentUpon>VentasForm.cs</DependentUpon>
