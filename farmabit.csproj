@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +78,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>boseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="boseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="boseDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="boseDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet5.xsd</DependentUpon>
     </Compile>
     <Compile Include="CajaForm.cs">
       <SubType>Form</SubType>
@@ -205,6 +238,11 @@
     <Compile Include="PagoTLFVivaForm.Designer.cs">
       <DependentUpon>PagoTLFVivaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="persona_proveedordataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>persona_proveedordataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorForm.cs">
@@ -231,6 +269,55 @@
     <Compile Include="RecargaVivaForm.Designer.cs">
       <DependentUpon>RecargaVivaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTECLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTECLIENTE.Designer.cs">
+      <DependentUpon>REPORTECLIENTE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteClienteForm.Designer.cs">
+      <DependentUpon>ReporteClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTEEMPLEADO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTEEMPLEADO.Designer.cs">
+      <DependentUpon>REPORTEEMPLEADO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteEmpleadoForm.Designer.cs">
+      <DependentUpon>ReporteEmpleadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTEPRODUCTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTEPRODUCTO.Designer.cs">
+      <DependentUpon>REPORTEPRODUCTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProductoForm.Designer.cs">
+      <DependentUpon>ReporteProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProovedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProovedorForm.Designer.cs">
+      <DependentUpon>ReporteProovedorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTEPROVEEDOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTEPROVEEDOR.Designer.cs">
+      <DependentUpon>REPORTEPROVEEDOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VentasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +413,34 @@
     <EmbeddedResource Include="RecargaVivaForm.resx">
       <DependentUpon>RecargaVivaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTEEMPLEADO.resx">
+      <DependentUpon>REPORTEEMPLEADO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEmpleadoForm.resx">
+      <DependentUpon>ReporteEmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportEmpleado.rdlc" />
+    <EmbeddedResource Include="REPORTEPRODUCTO.resx">
+      <DependentUpon>REPORTEPRODUCTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProductoForm.resx">
+      <DependentUpon>ReporteProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTEPROVEEDOR.resx">
+      <DependentUpon>REPORTEPROVEEDOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProducto.rdlc" />
+    <EmbeddedResource Include="ReportProveedor.rdlc" />
+    <EmbeddedResource Include="ReporteCliente.rdlc" />
+    <EmbeddedResource Include="REPORTECLIENTE.resx">
+      <DependentUpon>REPORTECLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteClienteForm.resx">
+      <DependentUpon>ReporteClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProovedorForm.resx">
+      <DependentUpon>ReporteProovedorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentasForm.resx">
       <DependentUpon>VentasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +476,51 @@
     </None>
     <None Include="boseDataSet2.xss">
       <DependentUpon>boseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet3.xsc">
+      <DependentUpon>boseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>boseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="boseDataSet3.xss">
+      <DependentUpon>boseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet4.xsc">
+      <DependentUpon>boseDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>boseDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="boseDataSet4.xss">
+      <DependentUpon>boseDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet5.xsc">
+      <DependentUpon>boseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>boseDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="boseDataSet5.xss">
+      <DependentUpon>boseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="persona_proveedordataset.xsc">
+      <DependentUpon>persona_proveedordataset.xsd</DependentUpon>
+    </None>
+    <None Include="persona_proveedordataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>persona_proveedordataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="persona_proveedordataset.xss">
+      <DependentUpon>persona_proveedordataset.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -493,6 +653,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
