@@ -19,7 +19,7 @@ namespace farmabit
         {
             InitializeComponent();
         }
-        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER01;database=bose;integrated security=true");
         private void txtusuario_TextChanged(object sender, EventArgs e)
         {
 
@@ -76,6 +76,11 @@ namespace farmabit
                 }
                 conexion.Close();
             
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

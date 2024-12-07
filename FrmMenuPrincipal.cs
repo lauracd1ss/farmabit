@@ -36,11 +36,164 @@ namespace farmabit
         private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Descuentos dc = new Descuentos();
+            ConsultaComprasForm dc = new ConsultaComprasForm();
             dc.Show();
         }
 
         private void descuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mant_producto dc = new Mant_producto();
+            dc.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClienteForm dc = new ClienteForm();
+            dc.Show();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmpleadoForm dc = new EmpleadoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProveedorForm dc = new ProveedorForm();
+            dc.Show();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormUsuario dc = new FormUsuario();
+            dc.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ComprasForm dc = new ComprasForm();
+            dc.Show();
+
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VentasForm dc = new VentasForm();
+            dc.Show();
+        }
+
+        private void cajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CajaForm dc = new CajaForm();
+            dc.Show();
+        }
+
+        private void fidelizacionClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FidelizarCliente dc = new FidelizarCliente();
+            dc.Show();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmPedidos dc = new FrmPedidos();
+            dc.Show();
+        }
+
+        private void ventasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaVentasForm dc = new ConsultaVentasForm();
+            dc.Show();
+        }
+
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaEmpleadoForm dc = new ConsultaEmpleadoForm();
+            dc.Show();
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaProductoForm dc = new ConsultaProductoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaProveedorForm dc = new ConsultaProveedorForm();
+            dc.Show();
+        }
+
+        private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaVentasForm dc = new ConsultaVentasForm();
+            dc.Show();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaUsuariosForm dc = new ConsultaUsuariosForm();
+            dc.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteClienteForm dc = new ReporteClienteForm();
+            dc.Show();
+        }
+
+        private void productosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteProductoForm dc = new ReporteProductoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteProovedorForm dc = new ReporteProovedorForm();
+            dc.Show();
+        }
+
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteEmpleadoForm dc = new ReporteEmpleadoForm();
+            dc.Show();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PagosServiciosForm dc = new PagosServiciosForm();
+            dc.Show();
+        }
+
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
 
         }

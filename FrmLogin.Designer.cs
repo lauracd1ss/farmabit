@@ -52,8 +52,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 631);
+            this.panel1.Size = new System.Drawing.Size(819, 789);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -67,9 +68,10 @@
             this.panel2.Controls.Add(this.txtusuario);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(83, 53);
+            this.panel2.Location = new System.Drawing.Point(93, 66);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(566, 523);
+            this.panel2.Size = new System.Drawing.Size(637, 654);
             this.panel2.TabIndex = 1;
             // 
             // btnentrar
@@ -77,9 +79,10 @@
             this.btnentrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnentrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnentrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnentrar.Location = new System.Drawing.Point(217, 453);
+            this.btnentrar.Location = new System.Drawing.Point(244, 566);
+            this.btnentrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Size = new System.Drawing.Size(139, 37);
+            this.btnentrar.Size = new System.Drawing.Size(156, 46);
             this.btnentrar.TabIndex = 7;
             this.btnentrar.Text = "Iniciar Sesión";
             this.btnentrar.UseVisualStyleBackColor = false;
@@ -89,9 +92,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(201, 360);
+            this.label4.Location = new System.Drawing.Point(226, 450);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 31);
+            this.label4.Size = new System.Drawing.Size(204, 38);
             this.label4.TabIndex = 6;
             this.label4.Text = "CONTRASEÑA:";
             // 
@@ -99,34 +102,36 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(229, 280);
+            this.label3.Location = new System.Drawing.Point(258, 350);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 31);
+            this.label3.Size = new System.Drawing.Size(143, 38);
             this.label3.TabIndex = 5;
             this.label3.Text = "USUARIO:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 425);
+            this.label2.Location = new System.Drawing.Point(264, 531);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 4;
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(174, 413);
+            this.txtpass.Location = new System.Drawing.Point(196, 516);
+            this.txtpass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtpass.Name = "txtpass";
             this.txtpass.PasswordChar = '*';
-            this.txtpass.Size = new System.Drawing.Size(222, 22);
+            this.txtpass.Size = new System.Drawing.Size(249, 26);
             this.txtpass.TabIndex = 3;
             this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(174, 319);
+            this.txtusuario.Location = new System.Drawing.Point(196, 399);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(220, 22);
+            this.txtusuario.Size = new System.Drawing.Size(247, 26);
             this.txtusuario.TabIndex = 2;
             this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
@@ -134,17 +139,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 344);
+            this.label1.Location = new System.Drawing.Point(261, 430);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::farmabit.Properties.Resources.logoo;
-            this.pictureBox2.Location = new System.Drawing.Point(174, 40);
+            this.pictureBox2.Location = new System.Drawing.Point(196, 50);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(218, 220);
+            this.pictureBox2.Size = new System.Drawing.Size(245, 275);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -154,21 +160,24 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::farmabit.Properties.Resources.Abstract_Geometric_Medical_Cross_Shape_Medicine;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(728, 631);
+            this.pictureBox1.Size = new System.Drawing.Size(819, 789);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 631);
+            this.ClientSize = new System.Drawing.Size(819, 789);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
