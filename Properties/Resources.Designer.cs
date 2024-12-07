@@ -365,6 +365,16 @@ namespace farmabit.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pedido {
+            get {
+                object obj = ResourceManager.GetObject("Pedido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Producto {
             get {
                 object obj = ResourceManager.GetObject("Producto", resourceCulture);

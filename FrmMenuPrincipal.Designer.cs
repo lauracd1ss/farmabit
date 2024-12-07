@@ -59,6 +59,8 @@ namespace farmabit
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fidelizacionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,14 +68,13 @@ namespace farmabit
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fidelizacionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -341,7 +342,8 @@ namespace farmabit
             this.ventasToolStripMenuItem1,
             this.cajaToolStripMenuItem,
             this.descuentoToolStripMenuItem,
-            this.fidelizacionClientesToolStripMenuItem});
+            this.fidelizacionClientesToolStripMenuItem,
+            this.pedidosToolStripMenuItem});
             this.movimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.movimientoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.movimientoToolStripMenuItem.Image = global::farmabit.Properties.Resources.Movimiento;
@@ -377,6 +379,20 @@ namespace farmabit
             this.descuentoToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
             this.descuentoToolStripMenuItem.Text = "Descuento";
             this.descuentoToolStripMenuItem.Click += new System.EventHandler(this.descuentoToolStripMenuItem_Click);
+            // 
+            // fidelizacionClientesToolStripMenuItem
+            // 
+            this.fidelizacionClientesToolStripMenuItem.Image = global::farmabit.Properties.Resources.usuario;
+            this.fidelizacionClientesToolStripMenuItem.Name = "fidelizacionClientesToolStripMenuItem";
+            this.fidelizacionClientesToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
+            this.fidelizacionClientesToolStripMenuItem.Text = "Fidelizacion Clientes";
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.Image = global::farmabit.Properties.Resources.Pedido;
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
             // 
             // toolStripMenuItem2
             // 
@@ -439,6 +455,13 @@ namespace farmabit
             this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(234, 36);
             this.ventasToolStripMenuItem2.Text = "Ventas";
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = global::farmabit.Properties.Resources.usuario;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(234, 36);
+            this.toolStripMenuItem4.Text = "Usuario";
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -489,20 +512,6 @@ namespace farmabit
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(235, 78);
             this.toolStripMenuItem3.Text = "Pagos de Servicio";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Image = global::farmabit.Properties.Resources.usuario;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(234, 36);
-            this.toolStripMenuItem4.Text = "Usuario";
-            // 
-            // fidelizacionClientesToolStripMenuItem
-            // 
-            this.fidelizacionClientesToolStripMenuItem.Image = global::farmabit.Properties.Resources.usuario;
-            this.fidelizacionClientesToolStripMenuItem.Name = "fidelizacionClientesToolStripMenuItem";
-            this.fidelizacionClientesToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
-            this.fidelizacionClientesToolStripMenuItem.Text = "Fidelizacion Clientes";
             // 
             // FrmMenuPrincipal
             // 
@@ -581,5 +590,6 @@ namespace farmabit
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fidelizacionClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
     }
 }
