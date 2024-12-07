@@ -197,5 +197,12 @@ namespace farmabit
         {
 
         }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           /* this.Hide();
+            FrmMenuPrincipal dc = new FrmMenuPrincipal();
+            dc.Show();*/
+        }
     }
 }

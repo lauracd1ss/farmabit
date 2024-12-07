@@ -15,6 +15,40 @@ namespace farmabit
         public Mant_producto()
         {
             InitializeComponent();
+            // Asociar eventos a los controles programáticamente
+            descuentosToolStripMenuItem.Click += descuentosToolStripMenuItem_Click;
+            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
+            empleadosToolStripMenuItem.Click += empleadosToolStripMenuItem_Click;
+            proveedoresToolStripMenuItem.Click += proveedoresToolStripMenuItem_Click;
+            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
+            comprasToolStripMenuItem.Click += comprasToolStripMenuItem_Click;
+            ventasToolStripMenuItem1.Click += ventasToolStripMenuItem1_Click;
+            cajaToolStripMenuItem.Click += cajaToolStripMenuItem_Click;
+            fidelizacionClientesToolStripMenuItem.Click += fidelizacionClientesToolStripMenuItem_Click;
+            pedidosToolStripMenuItem.Click += pedidosToolStripMenuItem_Click;
+            ventasToolStripMenuItem.Click += ventasToolStripMenuItem_Click_1;
+            compraToolStripMenuItem.Click += compraToolStripMenuItem_Click;
+            productosToolStripMenuItem1.Click += productosToolStripMenuItem1_Click;
+            proveedoresToolStripMenuItem1.Click += proveedoresToolStripMenuItem1_Click;
+            ventasToolStripMenuItem2.Click += ventasToolStripMenuItem2_Click;
+            toolStripMenuItem4.Click += toolStripMenuItem4_Click;
+            clientesToolStripMenuItem1.Click += clientesToolStripMenuItem1_Click;
+            productosToolStripMenuItem2.Click += productosToolStripMenuItem2_Click;
+            proveedoresToolStripMenuItem2.Click += proveedoresToolStripMenuItem2_Click;
+            empleadosToolStripMenuItem1.Click += empleadosToolStripMenuItem1_Click;
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
+            inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
+
+
+
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+             FrmMenuPrincipal dc = new FrmMenuPrincipal();
+             dc.Show();
         }
 
         private void Mant_producto_Load(object sender, EventArgs e)
