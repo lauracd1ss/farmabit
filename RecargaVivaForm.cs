@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace farmabit
 {
@@ -16,10 +18,13 @@ namespace farmabit
         {
             InitializeComponent();
         }
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
 
         private void RecargaVivaForm_Load(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
 
+            lblfecha.Text = fechaActual.ToString("dd/MM/yyyy");
         }
 
         private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,6 +185,76 @@ namespace farmabit
             this.Hide();
             PagosServiciosForm dc = new PagosServiciosForm();
             dc.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(maskedTextBox1.Text) ||
+        string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                DateTime fecha = DateTime.Now;
+                conexion.Open();
+                
+
+                string consulta = "insert into Administracion.RecargaTLF values('" + txtag.Text + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "','" + textBox3.Text + "','" + maskedTextBox1.Text + "')";
+                SqlCommand ejecutar = new SqlCommand(consulta, conexion);
+                ejecutar.ExecuteNonQuery();
+                MessageBox.Show("Registro Insertado Correctamente");
+                maskedTextBox1.Clear();
+                textBox3.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el registro: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admiten numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (e.KeyChar == (char)13)
+            {
+                textBox3.Focus();
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admiten numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

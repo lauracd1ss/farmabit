@@ -181,5 +181,39 @@ namespace farmabit
             dc.Show();
         }
 
+        private void btnclaro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpcionesTLFForm opciones = new OpcionesTLFForm("Claro");
+            opciones.ShowDialog();
+        }
+
+        private void btncoraasan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PagoCORAASANForm dc = new PagoCORAASANForm();
+            dc.Show();
+        }
+
+        private void btnedenorte_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PagoEDENORTEForm dc = new PagoEDENORTEForm();
+            dc.Show();
+        }
+
+        private void btnaltice_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpcionesTLFForm opciones = new OpcionesTLFForm("Altice");
+            opciones.ShowDialog();
+        }
+
+        private void btnviva_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpcionesTLFForm opciones = new OpcionesTLFForm("Viva");
+            opciones.ShowDialog();
+        }
     }
 }

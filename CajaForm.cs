@@ -180,13 +180,18 @@ namespace farmabit
             dc.Show();
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+       
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             PagosServiciosForm dc = new PagosServiciosForm();
             dc.Show();
         }
-
-
     }
 }

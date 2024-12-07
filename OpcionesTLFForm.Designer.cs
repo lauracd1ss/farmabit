@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnpago = new System.Windows.Forms.Button();
+            this.btnrecarga = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -41,8 +41,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btnpago);
+            this.panel1.Controls.Add(this.btnrecarga);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -59,30 +59,33 @@
             this.button2.Size = new System.Drawing.Size(56, 50);
             this.button2.TabIndex = 30;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnpago
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(314, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 180);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "PAGO TELEFONO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnpago.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnpago.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnpago.Location = new System.Drawing.Point(314, 82);
+            this.btnpago.Name = "btnpago";
+            this.btnpago.Size = new System.Drawing.Size(271, 180);
+            this.btnpago.TabIndex = 29;
+            this.btnpago.Text = "PAGO TELEFONO";
+            this.btnpago.UseVisualStyleBackColor = false;
+            this.btnpago.Click += new System.EventHandler(this.btnpago_Click);
             // 
-            // button7
+            // btnrecarga
             // 
-            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(29, 82);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(268, 180);
-            this.button7.TabIndex = 28;
-            this.button7.Text = "RECARGA";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnrecarga.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnrecarga.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrecarga.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnrecarga.Location = new System.Drawing.Point(29, 82);
+            this.btnrecarga.Name = "btnrecarga";
+            this.btnrecarga.Size = new System.Drawing.Size(268, 180);
+            this.btnrecarga.TabIndex = 28;
+            this.btnrecarga.Text = "RECARGA";
+            this.btnrecarga.UseVisualStyleBackColor = false;
+            this.btnrecarga.Click += new System.EventHandler(this.btnrecarga_Click);
             // 
             // panel5
             // 
@@ -126,8 +129,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnpago;
+        private System.Windows.Forms.Button btnrecarga;
         private System.Windows.Forms.Button button2;
     }
 }
