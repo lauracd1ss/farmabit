@@ -366,7 +366,7 @@
             this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
             this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(214, 98);
             this.movimientoToolStripMenuItem.Text = "Movimiento";
-            this.movimientoToolStripMenuItem.Click += new System.EventHandler(this.movimientoToolStripMenuItem_Click);
+         
             // 
             // comprasToolStripMenuItem
             // 

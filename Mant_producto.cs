@@ -234,13 +234,14 @@ namespace farmabit
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
                 // Agregar los parámetros con los valores del formulario
-                comando.Parameters.AddWithValue("@idproducto", int.Parse(txtIdProducto.Text)); // Asegúrate de tener un campo txtIdProducto
+              /*  comando.Parameters.AddWithValue("@idproducto", int.Parse(txtIdProducto.Text)); // Asegúrate de tener un campo txtIdProducto
                 comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
                 comando.Parameters.AddWithValue("@tipo", int.Parse(cmbTipo.SelectedValue.ToString())); // Si usas un ComboBox para "tipo"
                 comando.Parameters.AddWithValue("@precio_detalle", decimal.Parse(txtPrecioDetalle.Text));
                 comando.Parameters.AddWithValue("@fechacaducidad", dtpFechaCaducidad.Value.Date); // Usando un DateTimePicker
                 comando.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
                 comando.Parameters.AddWithValue("@temperatura", txtTemperatura.Text);
+              */
 
                 // Ejecutar el comando
                 int filasAfectadas = comando.ExecuteNonQuery();
