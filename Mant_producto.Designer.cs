@@ -39,28 +39,27 @@
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtRegistroSanitario = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbtnActivo = new System.Windows.Forms.RadioButton();
             this.label25 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnNecesitaRecetaNo = new System.Windows.Forms.RadioButton();
+            this.rbtnNecesitaRecetaSi = new System.Windows.Forms.RadioButton();
             this.button4 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtLaboratorio = new System.Windows.Forms.TextBox();
+            this.txtPrecioDetalle = new System.Windows.Forms.TextBox();
+            this.txtCosto = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtConcentracion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPresentacion = new System.Windows.Forms.TextBox();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -97,6 +96,10 @@
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rbtnDesactivo = new System.Windows.Forms.RadioButton();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.gpboxNecesitaRecesa = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -105,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.gpboxNecesitaRecesa.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,6 +180,7 @@
             this.button6.TabIndex = 21;
             this.button6.Text = "Limpiar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -202,6 +208,7 @@
             this.button8.TabIndex = 23;
             this.button8.Text = "Eliminar";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel5
             // 
@@ -239,28 +246,27 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.gpboxNecesitaRecesa);
+            this.groupBox1.Controls.Add(this.dtpFecha);
+            this.groupBox1.Controls.Add(this.txtRegistroSanitario);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtLaboratorio);
+            this.groupBox1.Controls.Add(this.txtPrecioDetalle);
+            this.groupBox1.Controls.Add(this.txtCosto);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtStock);
+            this.groupBox1.Controls.Add(this.txtConcentracion);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtPresentacion);
             this.groupBox1.Controls.Add(this.txtIdProducto);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -272,19 +278,19 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1220, 258);
+            this.groupBox1.Size = new System.Drawing.Size(1493, 258);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
             // 
-            // textBox10
+            // txtRegistroSanitario
             // 
-            this.textBox10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(1043, 98);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(145, 25);
-            this.textBox10.TabIndex = 69;
+            this.txtRegistroSanitario.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistroSanitario.Location = new System.Drawing.Point(1043, 98);
+            this.txtRegistroSanitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRegistroSanitario.Name = "txtRegistroSanitario";
+            this.txtRegistroSanitario.Size = new System.Drawing.Size(145, 25);
+            this.txtRegistroSanitario.TabIndex = 69;
             // 
             // label12
             // 
@@ -297,19 +303,19 @@
             this.label12.TabIndex = 68;
             this.label12.Text = "Registro Sanitario:";
             // 
-            // radioButton3
+            // rbtnActivo
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton3.Location = new System.Drawing.Point(937, 199);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(83, 25);
-            this.radioButton3.TabIndex = 67;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Activo";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnActivo.AutoSize = true;
+            this.rbtnActivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnActivo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbtnActivo.Location = new System.Drawing.Point(17, 22);
+            this.rbtnActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbtnActivo.Name = "rbtnActivo";
+            this.rbtnActivo.Size = new System.Drawing.Size(83, 25);
+            this.rbtnActivo.TabIndex = 67;
+            this.rbtnActivo.TabStop = true;
+            this.rbtnActivo.Text = "Activo";
+            this.rbtnActivo.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -333,31 +339,31 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "¿Necesita receta?";
             // 
-            // radioButton2
+            // rbtnNecesitaRecetaNo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.radioButton2.Location = new System.Drawing.Point(1109, 146);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 34);
-            this.radioButton2.TabIndex = 34;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnNecesitaRecetaNo.AutoSize = true;
+            this.rbtnNecesitaRecetaNo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.rbtnNecesitaRecetaNo.Location = new System.Drawing.Point(73, 10);
+            this.rbtnNecesitaRecetaNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbtnNecesitaRecetaNo.Name = "rbtnNecesitaRecetaNo";
+            this.rbtnNecesitaRecetaNo.Size = new System.Drawing.Size(67, 34);
+            this.rbtnNecesitaRecetaNo.TabIndex = 34;
+            this.rbtnNecesitaRecetaNo.TabStop = true;
+            this.rbtnNecesitaRecetaNo.Text = "No";
+            this.rbtnNecesitaRecetaNo.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnNecesitaRecetaSi
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.radioButton1.Location = new System.Drawing.Point(1042, 145);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 34);
-            this.radioButton1.TabIndex = 33;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Si";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnNecesitaRecetaSi.AutoSize = true;
+            this.rbtnNecesitaRecetaSi.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.rbtnNecesitaRecetaSi.Location = new System.Drawing.Point(6, 9);
+            this.rbtnNecesitaRecetaSi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbtnNecesitaRecetaSi.Name = "rbtnNecesitaRecetaSi";
+            this.rbtnNecesitaRecetaSi.Size = new System.Drawing.Size(54, 34);
+            this.rbtnNecesitaRecetaSi.TabIndex = 33;
+            this.rbtnNecesitaRecetaSi.TabStop = true;
+            this.rbtnNecesitaRecetaSi.Text = "Si";
+            this.rbtnNecesitaRecetaSi.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -381,33 +387,32 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Laboratorio:";
             // 
-            // textBox8
+            // txtLaboratorio
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(613, 199);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(162, 25);
-            this.textBox8.TabIndex = 30;
+            this.txtLaboratorio.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLaboratorio.Location = new System.Drawing.Point(613, 199);
+            this.txtLaboratorio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLaboratorio.Name = "txtLaboratorio";
+            this.txtLaboratorio.Size = new System.Drawing.Size(162, 25);
+            this.txtLaboratorio.TabIndex = 30;
             // 
-            // textBox7
+            // txtPrecioDetalle
             // 
-            this.textBox7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(649, 149);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(167, 25);
-            this.textBox7.TabIndex = 29;
+            this.txtPrecioDetalle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioDetalle.Location = new System.Drawing.Point(649, 149);
+            this.txtPrecioDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrecioDetalle.Name = "txtPrecioDetalle";
+            this.txtPrecioDetalle.Size = new System.Drawing.Size(167, 25);
+            this.txtPrecioDetalle.TabIndex = 29;
             // 
-            // textBox6
+            // txtCosto
             // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(558, 91);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(167, 25);
-            this.textBox6.TabIndex = 28;
+            this.txtCosto.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCosto.Location = new System.Drawing.Point(558, 91);
+            this.txtCosto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.Size = new System.Drawing.Size(167, 25);
+            this.txtCosto.TabIndex = 28;
             // 
             // label8
             // 
@@ -431,23 +436,23 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Costo:";
             // 
-            // textBox4
+            // txtStock
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(555, 46);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 25);
-            this.textBox4.TabIndex = 25;
+            this.txtStock.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Location = new System.Drawing.Point(555, 46);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(167, 25);
+            this.txtStock.TabIndex = 25;
             // 
-            // textBox3
+            // txtConcentracion
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(176, 202);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(223, 25);
-            this.textBox3.TabIndex = 24;
+            this.txtConcentracion.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConcentracion.Location = new System.Drawing.Point(176, 202);
+            this.txtConcentracion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConcentracion.Name = "txtConcentracion";
+            this.txtConcentracion.Size = new System.Drawing.Size(223, 25);
+            this.txtConcentracion.TabIndex = 24;
             // 
             // txtNombre
             // 
@@ -458,15 +463,14 @@
             this.txtNombre.Size = new System.Drawing.Size(272, 25);
             this.txtNombre.TabIndex = 23;
             // 
-            // textBox1
+            // txtPresentacion
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(162, 150);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 25);
-            this.textBox1.TabIndex = 22;
+            this.txtPresentacion.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPresentacion.Location = new System.Drawing.Point(162, 150);
+            this.txtPresentacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPresentacion.Name = "txtPresentacion";
+            this.txtPresentacion.Size = new System.Drawing.Size(182, 25);
+            this.txtPresentacion.TabIndex = 22;
             // 
             // txtIdProducto
             // 
@@ -499,17 +503,6 @@
             this.label7.Size = new System.Drawing.Size(73, 30);
             this.label7.TabIndex = 16;
             this.label7.Text = "Stock:";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(1026, 46);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(165, 25);
-            this.maskedTextBox1.TabIndex = 12;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
@@ -843,6 +836,49 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 98);
             this.toolStripMenuItem3.Text = "Pagos de Servicio";
             // 
+            // rbtnDesactivo
+            // 
+            this.rbtnDesactivo.AutoSize = true;
+            this.rbtnDesactivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnDesactivo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbtnDesactivo.Location = new System.Drawing.Point(106, 19);
+            this.rbtnDesactivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbtnDesactivo.Name = "rbtnDesactivo";
+            this.rbtnDesactivo.Size = new System.Drawing.Size(114, 25);
+            this.rbtnDesactivo.TabIndex = 70;
+            this.rbtnDesactivo.TabStop = true;
+            this.rbtnDesactivo.Text = "Desactivo";
+            this.rbtnDesactivo.UseVisualStyleBackColor = true;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(1041, 49);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(135, 35);
+            this.dtpFecha.TabIndex = 71;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // gpboxNecesitaRecesa
+            // 
+            this.gpboxNecesitaRecesa.Controls.Add(this.rbtnNecesitaRecetaSi);
+            this.gpboxNecesitaRecesa.Controls.Add(this.rbtnNecesitaRecetaNo);
+            this.gpboxNecesitaRecesa.Location = new System.Drawing.Point(1036, 137);
+            this.gpboxNecesitaRecesa.Name = "gpboxNecesitaRecesa";
+            this.gpboxNecesitaRecesa.Size = new System.Drawing.Size(200, 54);
+            this.gpboxNecesitaRecesa.TabIndex = 72;
+            this.gpboxNecesitaRecesa.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtnActivo);
+            this.groupBox2.Controls.Add(this.rbtnDesactivo);
+            this.groupBox2.Location = new System.Drawing.Point(939, 179);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(243, 57);
+            this.groupBox2.TabIndex = 73;
+            this.groupBox2.TabStop = false;
+            // 
             // Mant_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -866,6 +902,10 @@
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.gpboxNecesitaRecesa.ResumeLayout(false);
+            this.gpboxNecesitaRecesa.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -877,7 +917,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -889,18 +928,18 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPresentacion;
+        private System.Windows.Forms.TextBox txtPrecioDetalle;
+        private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtConcentracion;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtLaboratorio;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnNecesitaRecetaNo;
+        private System.Windows.Forms.RadioButton rbtnNecesitaRecetaSi;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button6;
@@ -908,9 +947,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtnActivo;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtRegistroSanitario;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
@@ -941,5 +980,9 @@
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.RadioButton rbtnDesactivo;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.GroupBox gpboxNecesitaRecesa;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

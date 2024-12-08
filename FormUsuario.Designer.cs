@@ -37,7 +37,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.comboprov = new System.Windows.Forms.ComboBox();
             this.combomun = new System.Windows.Forms.ComboBox();
-            this.combopais = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtcalle = new System.Windows.Forms.TextBox();
@@ -80,7 +78,6 @@
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.maskedfecha = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,7 +87,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,26 +110,22 @@
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
+            this.combopais = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,7 +143,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1243, 921);
+            this.panel1.Size = new System.Drawing.Size(1379, 921);
             this.panel1.TabIndex = 4;
             // 
             // textBox9
@@ -244,18 +244,6 @@
             this.label17.Size = new System.Drawing.Size(297, 38);
             this.label17.TabIndex = 11;
             this.label17.Text = "REGISTRAR USUARIO";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBox1.Image = global::farmabit.Properties.Resources.logoofinal;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -669,17 +657,6 @@
             this.combomun.TabIndex = 37;
             this.combomun.Text = "Seleccione municipio";
             // 
-            // combopais
-            // 
-            this.combopais.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combopais.FormattingEnabled = true;
-            this.combopais.Location = new System.Drawing.Point(504, 206);
-            this.combopais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.combopais.Name = "combopais";
-            this.combopais.Size = new System.Drawing.Size(186, 26);
-            this.combopais.TabIndex = 36;
-            this.combopais.Text = "Seleccione país";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -769,17 +746,6 @@
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(131, 26);
             this.txtid.TabIndex = 21;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(443, 204);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 30);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "País:";
             // 
             // maskedfecha
             // 
@@ -887,6 +853,18 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.Image = global::farmabit.Properties.Resources.logoofinal;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -895,6 +873,56 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(125, 98);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem,
+            this.clientesToolStripMenuItem,
+            this.empleadosToolStripMenuItem,
+            this.proveedoresToolStripMenuItem,
+            this.usuarioToolStripMenuItem});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripMenuItem1.Image = global::farmabit.Properties.Resources.Registro;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(161, 98);
+            this.toolStripMenuItem1.Text = "Registro";
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Image = global::farmabit.Properties.Resources.Producto;
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
+            this.productosToolStripMenuItem.Text = "Productos";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Image = global::farmabit.Properties.Resources.Cliente;
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.Image = global::farmabit.Properties.Resources.Empleado;
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Image = global::farmabit.Properties.Resources.Proveedor;
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Image = global::farmabit.Properties.Resources.usuario;
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // movimientoToolStripMenuItem
             // 
@@ -911,6 +939,7 @@
             this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
             this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(214, 98);
             this.movimientoToolStripMenuItem.Text = "Movimiento";
+            this.movimientoToolStripMenuItem.Click += new System.EventHandler(this.movimientoToolStripMenuItem_Click);
             // 
             // comprasToolStripMenuItem
             // 
@@ -1021,16 +1050,19 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(286, 46);
             this.toolStripMenuItem4.Text = "Usuario";
             // 
-            // toolStripMenuItem3
+            // reportesToolStripMenuItem
             // 
-            this.toolStripMenuItem3.Checked = true;
-            this.toolStripMenuItem3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.toolStripMenuItem3.Image = global::farmabit.Properties.Resources.dinero;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 98);
-            this.toolStripMenuItem3.Text = "Pagos de Servicio";
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem1,
+            this.productosToolStripMenuItem2,
+            this.proveedoresToolStripMenuItem2,
+            this.empleadosToolStripMenuItem1});
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.reportesToolStripMenuItem.Image = global::farmabit.Properties.Resources.Reporte;
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(169, 98);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // clientesToolStripMenuItem1
             // 
@@ -1060,75 +1092,44 @@
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(286, 46);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
-            // reportesToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem1,
-            this.productosToolStripMenuItem2,
-            this.proveedoresToolStripMenuItem2,
-            this.empleadosToolStripMenuItem1});
-            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.reportesToolStripMenuItem.Image = global::farmabit.Properties.Resources.Reporte;
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(169, 98);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.toolStripMenuItem3.Checked = true;
+            this.toolStripMenuItem3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.GhostWhite;
+            this.toolStripMenuItem3.Image = global::farmabit.Properties.Resources.dinero;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 98);
+            this.toolStripMenuItem3.Text = "Pagos de Servicio";
             // 
-            // productosToolStripMenuItem
+            // label7
             // 
-            this.productosToolStripMenuItem.Image = global::farmabit.Properties.Resources.Producto;
-            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
-            this.productosToolStripMenuItem.Text = "Productos";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(443, 204);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 30);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "País:";
             // 
-            // clientesToolStripMenuItem
+            // combopais
             // 
-            this.clientesToolStripMenuItem.Image = global::farmabit.Properties.Resources.Cliente;
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // empleadosToolStripMenuItem
-            // 
-            this.empleadosToolStripMenuItem.Image = global::farmabit.Properties.Resources.Empleado;
-            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
-            this.empleadosToolStripMenuItem.Text = "Empleados";
-            // 
-            // proveedoresToolStripMenuItem
-            // 
-            this.proveedoresToolStripMenuItem.Image = global::farmabit.Properties.Resources.Proveedor;
-            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
-            this.proveedoresToolStripMenuItem.Text = "Proveedores";
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.Image = global::farmabit.Properties.Resources.usuario;
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(286, 46);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.empleadosToolStripMenuItem,
-            this.proveedoresToolStripMenuItem,
-            this.usuarioToolStripMenuItem});
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripMenuItem1.Image = global::farmabit.Properties.Resources.Registro;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(161, 98);
-            this.toolStripMenuItem1.Text = "Registro";
+            this.combopais.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combopais.FormattingEnabled = true;
+            this.combopais.Location = new System.Drawing.Point(504, 206);
+            this.combopais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.combopais.Name = "combopais";
+            this.combopais.Size = new System.Drawing.Size(186, 26);
+            this.combopais.TabIndex = 36;
+            this.combopais.Text = "Seleccione país";
             // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 921);
+            this.ClientSize = new System.Drawing.Size(1379, 921);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormUsuario";
@@ -1139,13 +1140,13 @@
             this.groupBox4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1190,7 +1191,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboprov;
         private System.Windows.Forms.ComboBox combomun;
-        private System.Windows.Forms.ComboBox combopais;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtcalle;
@@ -1200,7 +1200,6 @@
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.TextBox txtapellido;
         private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox maskedfecha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -1242,5 +1241,7 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ComboBox combopais;
+        private System.Windows.Forms.Label label7;
     }
 }

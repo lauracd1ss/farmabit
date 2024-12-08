@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static farmabit.FrmLogin;
 
 namespace farmabit
 {
@@ -44,6 +47,12 @@ namespace farmabit
 
         }
 
+        public TextBox txtCalleCliente { get { return txtcalle; } }
+public TextBox txtCasaCliente { get { return txtcasa; } }
+public ComboBox comboSectorCliente { get { return combosec; } }
+public ComboBox comboMunicipioCliente { get { return combomun; } }
+public ComboBox comboProvinciaCliente { get { return comboprov; } }
+
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -61,10 +70,88 @@ namespace farmabit
 
         }
 
+
+        private SqlConnection connection;
         private void ClienteForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'boseDataSet6.Municipio' table. You can move, or remove it, as needed.
+            this.municipioTableAdapter.Fill(this.boseDataSet6.Municipio);
+            // TODO: This line of code loads data into the 'dSProvincia.Provincia' table. You can move, or remove it, as needed.
+            this.provinciaTableAdapter.Fill(this.dSProvincia.Provincia);
+
+
+            try
+            {
+                // Inicializa la conexión
+                connection = ConexionBD.ObtenerConexion();
+
+           
+
+                // Cargar datos iniciales para Provincias
+                CargarProvincias();
+
+                // Configurar eventos de selección
+                comboprov.SelectedIndexChanged += comboprov_SelectedIndexChanged;
+                combomun.SelectedIndexChanged += combomun_SelectedIndexChanged;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+            }
 
         }
+
+        private void CargarProvincias()
+        {
+            string queryProvincias = "SELECT idprov, nombre FROM dbo.Provincia";
+            SqlDataAdapter adapter = new SqlDataAdapter(queryProvincias, connection);
+            DataTable provincias = new DataTable();
+            adapter.Fill(provincias);
+
+            comboprov.DataSource = provincias;
+            comboprov.DisplayMember = "nombre";
+            comboprov.ValueMember = "idprov";
+            comboprov.SelectedIndex = -1; // Desmarcar selección inicial
+        }
+
+        private void CargarMunicipios(int provinciaId)
+        {
+            string queryMunicipios = "SELECT idmuni, nombre FROM dbo.Municipio WHERE idprov_Provincia = @idprov";
+            SqlCommand cmd = new SqlCommand(queryMunicipios, connection);
+            cmd.Parameters.AddWithValue("@idprov", provinciaId);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable municipios = new DataTable();
+            adapter.Fill(municipios);
+
+            combomun.DataSource = municipios;
+            combomun.DisplayMember = "nombre";
+            combomun.ValueMember = "idmuni";
+            combomun.Enabled = true;
+            combomun.SelectedIndex = -1; // Desmarcar selección inicial
+
+            combosec.DataSource = null; // Limpiar ComboBox dependiente
+        }
+
+        private void CargarSectores(int municipioId)
+        {
+            string querySectores = "SELECT idsector, nombre FROM dbo.Sector WHERE idmuni_Municipio = @idmuni";
+            SqlCommand cmd = new SqlCommand(querySectores, connection);
+            cmd.Parameters.AddWithValue("@idmuni", municipioId);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable sectores = new DataTable();
+            adapter.Fill(sectores);
+
+            combosec.DataSource = sectores;
+            combosec.DisplayMember = "nombre";
+            combosec.ValueMember = "idsector";
+            combosec.Enabled = sectores.Rows.Count > 0; // Habilitar solo si hay datos
+            if (sectores.Rows.Count > 0)
+            {
+                combosec.SelectedIndex = 0; // Seleccionar automáticamente el primer elemento
+            }
+        }
+
 
         private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -226,5 +313,73 @@ namespace farmabit
             dc.Show();
         }
 
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.municipioTableAdapter.FillBy(this.boseDataSet6.Municipio);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonBuscarPersona_Click(object sender, EventArgs e)
+        {
+            
+            personaForm dc = new personaForm();
+            dc.Show();
+        }
+
+        private void botonBuscarDireccion_Click(object sender, EventArgs e)
+        {
+
+            direccionForm dc = new direccionForm();
+            dc.Show();
+        }
+
+        private void comboprov_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboprov.SelectedValue != null && int.TryParse(comboprov.SelectedValue.ToString(), out int selectedProvId))
+            {
+                CargarMunicipios(selectedProvId);
+            }
+        }
+
+        private void combomun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combomun.SelectedValue != null && int.TryParse(combomun.SelectedValue.ToString(), out int selectedMuniId))
+            {
+                CargarSectores(selectedMuniId);
+            }
+        }
+
+        private void combosec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combomun.SelectedValue != null && int.TryParse(combomun.SelectedValue.ToString(), out int selectedMuniId))
+            {
+                CargarSectores(selectedMuniId);
+            }
+        }
     }
 }
