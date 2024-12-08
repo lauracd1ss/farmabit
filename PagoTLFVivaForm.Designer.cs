@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtag = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -86,7 +86,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblfecha);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.maskedTextBox1);
@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtag);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.panel5);
@@ -117,16 +117,17 @@
             this.button3.TabIndex = 38;
             this.button3.Text = "Facturar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label6
+            // lblfecha
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(828, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 41);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "00/00/0000";
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(828, 145);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(180, 41);
+            this.lblfecha.TabIndex = 37;
+            this.lblfecha.Text = "00/00/0000";
             // 
             // textBox3
             // 
@@ -135,6 +136,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(92, 22);
             this.textBox3.TabIndex = 36;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox2
             // 
@@ -147,10 +149,12 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(709, 203);
-            this.maskedTextBox1.Mask = "(999)000-0000";
+            this.maskedTextBox1.Mask = "000-000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 34;
+            this.maskedTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBox1_KeyDown);
+            this.maskedTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
             // 
             // label5
             // 
@@ -186,20 +190,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(714, 284);
+            this.label2.Location = new System.Drawing.Point(714, 277);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 28);
             this.label2.TabIndex = 30;
             this.label2.Text = "RD$";
             // 
-            // textBox1
+            // txtag
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(593, 164);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.Text = "Viva";
+            this.txtag.Enabled = false;
+            this.txtag.Location = new System.Drawing.Point(593, 164);
+            this.txtag.Name = "txtag";
+            this.txtag.Size = new System.Drawing.Size(100, 22);
+            this.txtag.TabIndex = 29;
+            this.txtag.Text = "Viva";
             // 
             // label1
             // 
@@ -275,7 +279,6 @@
             this.toolStripMenuItem3});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1110, 82);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -544,7 +547,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
@@ -552,7 +555,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel5;
