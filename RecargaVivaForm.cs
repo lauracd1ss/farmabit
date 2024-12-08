@@ -223,24 +223,42 @@ namespace farmabit
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(maskedTextBox1.Text) ||
-        string.IsNullOrWhiteSpace(textBox3.Text))
+            if (string.IsNullOrWhiteSpace(maskedTextBox1.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             try
             {
                 DateTime fecha = DateTime.Now;
                 conexion.Open();
-                
 
-                string consulta = "insert into Administracion.RecargaTLF values('" + txtag.Text + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "','" + textBox3.Text + "','" + maskedTextBox1.Text + "')";
+                // Consulta para insertar datos y devolver el ID generado
+                string consulta = @"
+            INSERT INTO Administracion.RecargaTLF (Agencia, FechaPago, MontoPago, telefono) 
+            OUTPUT INSERTED.IdrecargaServicio 
+            VALUES (@Agencia, @FechaPago, @MontoPago, @telefono)";
+
                 SqlCommand ejecutar = new SqlCommand(consulta, conexion);
-                ejecutar.ExecuteNonQuery();
-                MessageBox.Show("Registro Insertado Correctamente");
+
+                // Reemplazar parámetros con valores
+                ejecutar.Parameters.AddWithValue("@Agencia", txtag.Text ?? string.Empty); // Validación de null
+                ejecutar.Parameters.AddWithValue("@FechaPago", fecha);
+                ejecutar.Parameters.AddWithValue("@MontoPago", textBox3.Text ?? string.Empty);
+                ejecutar.Parameters.AddWithValue("@telefono", maskedTextBox1.Text ?? string.Empty);
+
+                // Ejecutar consulta y obtener el ID del registro insertado
+                int idInsertado = (int)ejecutar.ExecuteScalar();
+
+                //MessageBox.Show("Registro Insertado Correctamente. ID: " + idInsertado);
+
+                // Limpiar los campos
                 maskedTextBox1.Clear();
                 textBox3.Clear();
+
+                // Generar la factura
+                ImprimirFactura(idInsertado);
             }
             catch (Exception ex)
             {
@@ -252,6 +270,51 @@ namespace farmabit
             }
 
         }
+        private void ImprimirFactura(int idRegistro)
+        {
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                // Consulta para recuperar los datos del registro
+                string consulta = "SELECT * FROM Administracion.RecargaTLF WHERE IdrecargaServicio = @ID";
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@ID", idRegistro);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Generar un texto para la factura
+                    string factura = "===== FACTURA =====\n";
+                   // factura += "IdrecargaServicio: " + reader["IdrecargaServicio"].ToString() + "\n";
+                    factura += "Agencia: " + reader["Agencia"].ToString() + "\n";
+                    factura += "FechaPago: " + reader["FechaPago"].ToString() + "\n";
+                    factura += "MontoPago: " + reader["MontoPago"].ToString() + "\n";
+                    factura += "telefono: " + reader["telefono"].ToString() + "\n";
+                    factura += "====================";
+
+                    MessageBox.Show(factura, "Factura Generada");
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar la factura: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
 
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -289,6 +352,174 @@ namespace farmabit
                 e.Handled = true;
                 MessageBox.Show("Solo se admiten numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMenuPrincipal dc = new FrmMenuPrincipal();
+            dc.Show();
+        }
+
+        private void productosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mant_producto dc = new Mant_producto();
+            dc.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClienteForm dc = new ClienteForm();
+            dc.Show();
+        }
+
+        private void empleadosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmpleadoForm dc = new EmpleadoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProveedorForm dc = new ProveedorForm();
+            dc.Show();
+        }
+
+        private void usuarioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormUsuario dc = new FormUsuario();
+            dc.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ComprasForm dc = new ComprasForm();
+            dc.Show();
+        }
+
+        private void ventasToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            VentasForm dc = new VentasForm();
+            dc.Show();
+        }
+
+        private void cajaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            CajaForm dc = new CajaForm();
+            dc.Show();
+        }
+
+        private void descuentoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Descuentos dc = new Descuentos();
+            dc.Show();
+        }
+
+        private void fidelizacionClientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FidelizarCliente dc = new FidelizarCliente();
+            dc.Show();
+        }
+
+        private void pedidosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmPedidos dc = new FrmPedidos();
+            dc.Show();
+        }
+
+        private void descuentosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaComprasForm dc = new ConsultaComprasForm();
+            dc.Show();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaClienteForm dc = new ConsultaClienteForm();
+            dc.Show();
+        }
+
+        private void compraToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaEmpleadoForm dc = new ConsultaEmpleadoForm();
+            dc.Show();
+        }
+
+        private void productosToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaProductoForm dc = new ConsultaProductoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaProveedorForm dc = new ConsultaProveedorForm();
+            dc.Show();
+        }
+
+        private void ventasToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaVentasForm dc = new ConsultaVentasForm();
+            dc.Show();
+        }
+
+        private void toolStripMenuItem4_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaUsuariosForm dc = new ConsultaUsuariosForm();
+            dc.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteClienteForm dc = new ReporteClienteForm();
+            dc.Show();
+        }
+
+        private void productosToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteProductoForm dc = new ReporteProductoForm();
+            dc.Show();
+        }
+
+        private void proveedoresToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteProovedorForm dc = new ReporteProovedorForm();
+            dc.Show();
+        }
+
+        private void empleadosToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReporteEmpleadoForm dc = new ReporteEmpleadoForm();
+            dc.Show();
+        }
+
+        private void toolStripMenuItem3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            PagosServiciosForm dc = new PagosServiciosForm();
+            dc.Show();
         }
     }
 }

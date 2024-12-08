@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,10 +51,13 @@ namespace farmabit
             FrmMenuPrincipal dc = new FrmMenuPrincipal();
             dc.Show();
         }
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
 
         private void RecargaCLaroForm_Load(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
 
+            lblfecha.Text = fechaActual.ToString("dd/MM/yyyy");
         }
         private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -213,6 +217,137 @@ namespace farmabit
             this.Hide();
             PagosServiciosForm dc = new PagosServiciosForm();
             dc.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(maskedTextBox1.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                DateTime fecha = DateTime.Now;
+                conexion.Open();
+
+                // Consulta para insertar datos y devolver el ID generado
+                string consulta = @"
+            INSERT INTO Administracion.RecargaTLF (Agencia, FechaPago, MontoPago, telefono) 
+            OUTPUT INSERTED.IdrecargaServicio 
+            VALUES (@Agencia, @FechaPago, @MontoPago, @telefono)";
+
+                SqlCommand ejecutar = new SqlCommand(consulta, conexion);
+
+                // Reemplazar parámetros con valores
+                ejecutar.Parameters.AddWithValue("@Agencia", txtag.Text ?? string.Empty); // Validación de null
+                ejecutar.Parameters.AddWithValue("@FechaPago", fecha);
+                ejecutar.Parameters.AddWithValue("@MontoPago", textBox3.Text ?? string.Empty);
+                ejecutar.Parameters.AddWithValue("@telefono", maskedTextBox1.Text ?? string.Empty);
+
+                // Ejecutar consulta y obtener el ID del registro insertado
+                int idInsertado = (int)ejecutar.ExecuteScalar();
+
+                //MessageBox.Show("Registro Insertado Correctamente. ID: " + idInsertado);
+
+                // Limpiar los campos
+                maskedTextBox1.Clear();
+                textBox3.Clear();
+
+                // Generar la factura
+                ImprimirFactura(idInsertado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el registro: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        private void ImprimirFactura(int idRegistro)
+        {
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                // Consulta para recuperar los datos del registro
+                string consulta = "SELECT * FROM Administracion.RecargaTLF WHERE IdrecargaServicio = @ID";
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@ID", idRegistro);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Generar un texto para la factura
+                    string factura = "===== FACTURA =====\n";
+                    // factura += "IdrecargaServicio: " + reader["IdrecargaServicio"].ToString() + "\n";
+                    factura += "Agencia: " + reader["Agencia"].ToString() + "\n";
+                    factura += "FechaPago: " + reader["FechaPago"].ToString() + "\n";
+                    factura += "MontoPago: " + reader["MontoPago"].ToString() + "\n";
+                    factura += "telefono: " + reader["telefono"].ToString() + "\n";
+                    factura += "====================";
+
+                    MessageBox.Show(factura, "Factura Generada");
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar la factura: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admiten numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (e.KeyChar == (char)13)
+            {
+                textBox3.Focus();
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admiten numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
