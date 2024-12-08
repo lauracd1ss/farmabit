@@ -354,6 +354,8 @@ namespace farmabit
             }
         }
 
+   
+
      
         private void productosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
