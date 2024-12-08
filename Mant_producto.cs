@@ -41,6 +41,11 @@ namespace farmabit
             empleadosToolStripMenuItem1.Click += empleadosToolStripMenuItem1_Click;
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
+            txtIdProducto.KeyPress += txtSoloNumeros_KeyPress;
+            txtPrecioDetalle.KeyPress += txtSoloNumeros_KeyPress;
+            txtCosto.KeyPress += txtSoloNumeros_KeyPress;
+            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
+
 
 
 
@@ -49,8 +54,8 @@ namespace farmabit
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-             FrmMenuPrincipal dc = new FrmMenuPrincipal();
-             dc.Show();
+            FrmMenuPrincipal dc = new FrmMenuPrincipal();
+            dc.Show();
         }
 
         private void Mant_producto_Load(object sender, EventArgs e)
@@ -222,26 +227,42 @@ namespace farmabit
         {
             try
             {
+                // Validar que se haya llenado al menos un campo necesario (ej. nombre)
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("Por favor, ingresa un nombre de producto.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Obtener la conexión abierta
                 SqlConnection conexion = ConexionBD.ObtenerConexion();
 
                 // Consulta SQL para insertar un producto
                 string consulta = @"
-            INSERT INTO Catalogo.Producto (idproducto, nombre, tipo, precio_detalle, fechacaducidad, descripcion, temperatura)
-            VALUES (@idproducto, @nombre, @tipo, @precio_detalle, @fechacaducidad, @descripcion, @temperatura)";
+            INSERT INTO dbo.Producto (nombre, laboratorio, precio_detalle, costo, fechacaducidad, 
+                                      Registro_sanitario, necesita_receta, estado, concentracion, presentacion)
+            VALUES (@nombre, @laboratorio, @precio_detalle, @costo, @fechacaducidad, 
+                    @Registro_sanitario, @necesita_receta, @estado, @concentracion, @presentacion)";
 
                 // Crear el comando SQL
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
                 // Agregar los parámetros con los valores del formulario
-              /*  comando.Parameters.AddWithValue("@idproducto", int.Parse(txtIdProducto.Text)); // Asegúrate de tener un campo txtIdProducto
                 comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
-               /* comando.Parameters.AddWithValue("@tipo", int.Parse(cmbTipo.SelectedValue.ToString())); // Si usas un ComboBox para "tipo"
+                comando.Parameters.AddWithValue("@laboratorio", txtLaboratorio.Text);
                 comando.Parameters.AddWithValue("@precio_detalle", decimal.Parse(txtPrecioDetalle.Text));
-                comando.Parameters.AddWithValue("@fechacaducidad", dtpFechaCaducidad.Value.Date); // Usando un DateTimePicker
-                comando.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
-                comando.Parameters.AddWithValue("@temperatura", txtTemperatura.Text);
-              */
+                comando.Parameters.AddWithValue("@costo", decimal.Parse(txtCosto.Text));
+                comando.Parameters.AddWithValue("@fechacaducidad", dtpFecha.Checked ? dtpFecha.Value.Date : (object)DBNull.Value);
+                comando.Parameters.AddWithValue("@Registro_sanitario", txtRegistroSanitario.Text);
+
+                // Obtener valor del RadioButton para necesita_receta (1 para Sí, 0 para No)
+                comando.Parameters.AddWithValue("@necesita_receta", rbtnNecesitaRecetaSi.Checked ? 1 : 0);
+
+                // Obtener valor del RadioButton para estado (1 para Activo, 0 para Inactivo)
+                comando.Parameters.AddWithValue("@estado", rbtnActivo.Checked ? 1 : 0);
+
+                comando.Parameters.AddWithValue("@concentracion", txtConcentracion.Text);
+                comando.Parameters.AddWithValue("@presentacion", txtPresentacion.Text);
 
                 // Ejecutar el comando
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -266,6 +287,106 @@ namespace farmabit
                 // Cerrar la conexión
                 ConexionBD.CerrarConexion();
             }
+
+        }
+
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFecha.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("La fecha de caducidad no puede ser anterior a hoy.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now.Date;
+            }
+        }
+
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar que se haya ingresado un nombre o ID para el producto
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) && string.IsNullOrWhiteSpace(txtIdProducto.Text))
+                {
+                    MessageBox.Show("Por favor, ingresa un nombre o ID de producto para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Obtener la conexión abierta
+                SqlConnection conexion = ConexionBD.ObtenerConexion();
+
+                // Consulta SQL para eliminar un producto
+                string consulta = @"
+            DELETE FROM dbo.Producto
+            WHERE idproducto = @idproducto OR nombre = @nombre";
+
+                // Crear el comando SQL
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                // Agregar los parámetros con los valores del formulario
+                comando.Parameters.AddWithValue("@idproducto", string.IsNullOrWhiteSpace(txtIdProducto.Text) ? (object)DBNull.Value : txtIdProducto.Text);
+                comando.Parameters.AddWithValue("@nombre", string.IsNullOrWhiteSpace(txtNombre.Text) ? (object)DBNull.Value : txtNombre.Text);
+
+                // Ejecutar el comando
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Mostrar un mensaje de éxito
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Producto eliminado exitosamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el producto.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar errores
+                MessageBox.Show("Ocurrió un error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                ConexionBD.CerrarConexion();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Limpiar todos los TextBox
+            txtNombre.Clear();
+            txtLaboratorio.Clear();
+            txtPrecioDetalle.Clear();
+            txtCosto.Clear();
+            txtRegistroSanitario.Clear();
+            txtConcentracion.Clear();
+            txtPresentacion.Clear();
+
+            // Limpiar los controles DateTimePicker
+            dtpFecha.Checked = false;
+
+            // Limpiar los RadioButton
+            rbtnNecesitaRecetaSi.Checked = false;
+            rbtnNecesitaRecetaNo.Checked = false;
+            rbtnActivo.Checked = false;
+            rbtnInactivo.Checked = false;
+
+            // Opcionalmente, puedes agregar un mensaje de éxito o información
+            MessageBox.Show("Campos limpiados correctamente.");
         }
     }
 }

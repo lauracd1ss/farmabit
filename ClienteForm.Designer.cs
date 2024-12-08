@@ -62,7 +62,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.comboprov = new System.Windows.Forms.ComboBox();
             this.combomun = new System.Windows.Forms.ComboBox();
-            this.combopais = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtcalle = new System.Windows.Forms.TextBox();
@@ -72,8 +71,6 @@
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedfecha = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -110,6 +107,7 @@
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -252,6 +250,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.label19);
@@ -275,7 +274,6 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.comboprov);
             this.groupBox1.Controls.Add(this.combomun);
-            this.groupBox1.Controls.Add(this.combopais);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtcalle);
@@ -285,8 +283,6 @@
             this.groupBox1.Controls.Add(this.txtnombre);
             this.groupBox1.Controls.Add(this.txtapellido);
             this.groupBox1.Controls.Add(this.txtid);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.maskedfecha);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -298,7 +294,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1213, 376);
+            this.groupBox1.Size = new System.Drawing.Size(1290, 376);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -462,9 +458,8 @@
             this.combotipdni.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combotipdni.FormattingEnabled = true;
             this.combotipdni.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino",
-            "No decirlo"});
+            "Cedula",
+            "Pasaporte"});
             this.combotipdni.Location = new System.Drawing.Point(955, 281);
             this.combotipdni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combotipdni.Name = "combotipdni";
@@ -522,7 +517,7 @@
             // 
             this.combosec.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combosec.FormattingEnabled = true;
-            this.combosec.Location = new System.Drawing.Point(933, 46);
+            this.combosec.Location = new System.Drawing.Point(933, 50);
             this.combosec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combosec.Name = "combosec";
             this.combosec.Size = new System.Drawing.Size(186, 26);
@@ -544,7 +539,7 @@
             // 
             this.comboprov.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboprov.FormattingEnabled = true;
-            this.comboprov.Location = new System.Drawing.Point(554, 252);
+            this.comboprov.Location = new System.Drawing.Point(558, 219);
             this.comboprov.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboprov.Name = "comboprov";
             this.comboprov.Size = new System.Drawing.Size(186, 26);
@@ -555,23 +550,12 @@
             // 
             this.combomun.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combomun.FormattingEnabled = true;
-            this.combomun.Location = new System.Drawing.Point(562, 302);
+            this.combomun.Location = new System.Drawing.Point(558, 272);
             this.combomun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combomun.Name = "combomun";
             this.combomun.Size = new System.Drawing.Size(186, 26);
             this.combomun.TabIndex = 37;
             this.combomun.Text = "Seleccione municipio";
-            // 
-            // combopais
-            // 
-            this.combopais.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combopais.FormattingEnabled = true;
-            this.combopais.Location = new System.Drawing.Point(504, 206);
-            this.combopais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.combopais.Name = "combopais";
-            this.combopais.Size = new System.Drawing.Size(186, 26);
-            this.combopais.TabIndex = 36;
-            this.combopais.Text = "Seleccione país";
             // 
             // label10
             // 
@@ -610,7 +594,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(443, 301);
+            this.label8.Location = new System.Drawing.Point(443, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 30);
             this.label8.TabIndex = 27;
@@ -621,7 +605,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(443, 249);
+            this.label3.Location = new System.Drawing.Point(443, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 30);
             this.label3.TabIndex = 26;
@@ -663,28 +647,6 @@
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(131, 26);
             this.txtid.TabIndex = 21;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(443, 204);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 30);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "País:";
-            // 
-            // maskedfecha
-            // 
-            this.maskedfecha.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedfecha.Location = new System.Drawing.Point(1063, 189);
-            this.maskedfecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.maskedfecha.Mask = "00/00/0000";
-            this.maskedfecha.Name = "maskedfecha";
-            this.maskedfecha.Size = new System.Drawing.Size(104, 25);
-            this.maskedfecha.TabIndex = 12;
-            this.maskedfecha.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
@@ -1018,6 +980,14 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 98);
             this.toolStripMenuItem3.Text = "Pagos de Servicio";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1063, 179);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(149, 35);
+            this.dateTimePicker1.TabIndex = 60;
+            // 
             // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1065,8 +1035,6 @@
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.TextBox txtapellido;
         private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedfecha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1076,7 +1044,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox combopais;
         private System.Windows.Forms.ComboBox combosec;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboprov;
@@ -1129,5 +1096,6 @@
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
