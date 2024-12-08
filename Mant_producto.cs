@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static farmabit.FrmLogin;
 
 namespace farmabit
 {
@@ -216,5 +218,53 @@ namespace farmabit
             dc.Show();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener la conexión abierta
+                SqlConnection conexion = ConexionBD.ObtenerConexion();
+
+                // Consulta SQL para insertar un producto
+                string consulta = @"
+            INSERT INTO Catalogo.Producto (idproducto, nombre, tipo, precio_detalle, fechacaducidad, descripcion, temperatura)
+            VALUES (@idproducto, @nombre, @tipo, @precio_detalle, @fechacaducidad, @descripcion, @temperatura)";
+
+                // Crear el comando SQL
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                // Agregar los parámetros con los valores del formulario
+                comando.Parameters.AddWithValue("@idproducto", int.Parse(txtIdProducto.Text)); // Asegúrate de tener un campo txtIdProducto
+                comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
+                comando.Parameters.AddWithValue("@tipo", int.Parse(cmbTipo.SelectedValue.ToString())); // Si usas un ComboBox para "tipo"
+                comando.Parameters.AddWithValue("@precio_detalle", decimal.Parse(txtPrecioDetalle.Text));
+                comando.Parameters.AddWithValue("@fechacaducidad", dtpFechaCaducidad.Value.Date); // Usando un DateTimePicker
+                comando.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
+                comando.Parameters.AddWithValue("@temperatura", txtTemperatura.Text);
+
+                // Ejecutar el comando
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Mostrar un mensaje de éxito
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Producto guardado exitosamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar el producto.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar errores
+                MessageBox.Show("Ocurrió un error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                ConexionBD.CerrarConexion();
+            }
+        }
     }
 }

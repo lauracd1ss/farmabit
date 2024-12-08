@@ -215,5 +215,9 @@ namespace farmabit
             dc.Show();
         }
 
+        private void movimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

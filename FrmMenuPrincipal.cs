@@ -204,5 +204,18 @@ namespace farmabit
             FrmMenuPrincipal dc = new FrmMenuPrincipal();
             dc.Show();*/
         }
+
+        private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                frm.Close(); // Cierra todos los formularios abiertos
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

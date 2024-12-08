@@ -19,10 +19,39 @@ namespace farmabit
         {
             InitializeComponent();
         }
-        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER01;database=bose;integrated security=true");
+   
         private void txtusuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public static class ConexionBD
+        {
+            private static readonly string cadenaConexion = "server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true";
+            private static SqlConnection conexion;
+
+            public static SqlConnection ObtenerConexion()
+            {
+                if (conexion == null)
+                {
+                    conexion = new SqlConnection(cadenaConexion);
+                }
+
+                if (conexion.State == System.Data.ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
+
+                return conexion;
+            }
+
+            public static void CerrarConexion()
+            {
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
         }
 
         private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -35,34 +64,50 @@ namespace farmabit
 
         private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            if (e.KeyChar == (char)13) // Verificar si se presionó la tecla Enter
             {
-                conexion.Open();
-                string consulta = "select * from Administracion.Usuario WHERE usuario='" + txtusuario.Text + "' AND password='" + txtpass.Text + "'";
-                SqlCommand ejecutar = new SqlCommand(consulta, conexion);
-                SqlDataReader dr = ejecutar.ExecuteReader();
-                if (dr.Read())
+                try
                 {
-                    UsuarioActual = txtusuario.Text;
-                    this.Hide();
-                    FrmMenuPrincipal vp = new FrmMenuPrincipal();
-                    vp.Show();
+                    SqlConnection conexion = ConexionBD.ObtenerConexion(); // Obtiene la conexión abierta
+                    string consulta = "select * from Administracion.Usuario WHERE usuario='" + txtusuario.Text + "' AND password='" + txtpass.Text + "'";
+                    SqlCommand ejecutar = new SqlCommand(consulta, conexion);
+                    SqlDataReader dr = ejecutar.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        UsuarioActual = txtusuario.Text;
+                        this.Hide();
+                        FrmMenuPrincipal vp = new FrmMenuPrincipal();
+                        vp.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Datos incorrectos.");
+                    }
+
+                    dr.Close(); // Cierra el SqlDataReader
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Datos incorrectos.");
+                    MessageBox.Show("Error: " + ex.Message);
                 }
-                conexion.Close();
+                finally
+                {
+                    ConexionBD.CerrarConexion(); // Cierra la conexión si ya no se usa
+                }
             }
         }
 
+
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            
-                conexion.Open();
+            try
+            {
+                SqlConnection conexion = ConexionBD.ObtenerConexion();
                 string consulta = "select * from Administracion.Usuario WHERE usuario='" + txtusuario.Text + "' AND password='" + txtpass.Text + "'";
                 SqlCommand ejecutar = new SqlCommand(consulta, conexion);
                 SqlDataReader dr = ejecutar.ExecuteReader();
+
                 if (dr.Read())
                 {
                     UsuarioActual = txtusuario.Text;
@@ -74,8 +119,18 @@ namespace farmabit
                 {
                     MessageBox.Show("Datos incorrectos.");
                 }
-                conexion.Close();
-            
+
+                dr.Close(); // Asegúrate de cerrar el DataReader después de usarlo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
+
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
