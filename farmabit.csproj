@@ -97,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="boseDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CajaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -556,6 +561,17 @@
     </None>
     <None Include="boseDataSet5.xss">
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet6.xsc">
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>boseDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="boseDataSet6.xss">
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="persona_proveedordataset.xsc">
