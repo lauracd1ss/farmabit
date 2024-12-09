@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -39,6 +40,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.botonBuscarDireccion = new System.Windows.Forms.Button();
+            this.botonBuscarPersona = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -58,10 +64,12 @@
             this.combosexo = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtcasa = new System.Windows.Forms.TextBox();
-            this.combosec = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.comboprov = new System.Windows.Forms.ComboBox();
+            this.provinciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSProvincia = new farmabit.DSProvincia();
             this.combomun = new System.Windows.Forms.ComboBox();
+            this.municipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boseDataSet6 = new farmabit.boseDataSet6();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtcalle = new System.Windows.Forms.TextBox();
@@ -107,15 +115,24 @@
             this.proveedoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.provinciaTableAdapter = new farmabit.DSProvinciaTableAdapters.ProvinciaTableAdapter();
+            this.municipioTableAdapter = new farmabit.boseDataSet6TableAdapters.MunicipioTableAdapter();
+            this.dScompletoPaProbar = new farmabit.DScompletoPaProbar();
+            this.combosec = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSProvincia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.municipioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boseDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dScompletoPaProbar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,7 +150,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1476, 810);
+            this.panel1.Size = new System.Drawing.Size(1486, 810);
             this.panel1.TabIndex = 2;
             // 
             // textBox9
@@ -199,6 +216,7 @@
             this.button7.TabIndex = 22;
             this.button7.Text = "Guardar";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -250,6 +268,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.combosec);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.botonBuscarDireccion);
+            this.groupBox1.Controls.Add(this.botonBuscarPersona);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
@@ -270,8 +294,6 @@
             this.groupBox1.Controls.Add(this.combosexo);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtcasa);
-            this.groupBox1.Controls.Add(this.combosec);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.comboprov);
             this.groupBox1.Controls.Add(this.combomun);
             this.groupBox1.Controls.Add(this.label10);
@@ -294,17 +316,71 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1290, 376);
+            this.groupBox1.Size = new System.Drawing.Size(1290, 380);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(438, 213);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(134, 30);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Id dirección:";
+            // 
+            // botonBuscarDireccion
+            // 
+            this.botonBuscarDireccion.BackgroundImage = global::farmabit.Properties.Resources.busqueda;
+            this.botonBuscarDireccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonBuscarDireccion.Location = new System.Drawing.Point(603, 216);
+            this.botonBuscarDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.botonBuscarDireccion.Name = "botonBuscarDireccion";
+            this.botonBuscarDireccion.Size = new System.Drawing.Size(49, 33);
+            this.botonBuscarDireccion.TabIndex = 64;
+            this.botonBuscarDireccion.UseVisualStyleBackColor = true;
+            this.botonBuscarDireccion.Click += new System.EventHandler(this.botonBuscarDireccion_Click);
+            // 
+            // botonBuscarPersona
+            // 
+            this.botonBuscarPersona.BackgroundImage = global::farmabit.Properties.Resources.busqueda;
+            this.botonBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonBuscarPersona.Location = new System.Drawing.Point(143, 91);
+            this.botonBuscarPersona.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.botonBuscarPersona.Name = "botonBuscarPersona";
+            this.botonBuscarPersona.Size = new System.Drawing.Size(46, 37);
+            this.botonBuscarPersona.TabIndex = 63;
+            this.botonBuscarPersona.UseVisualStyleBackColor = true;
+            this.botonBuscarPersona.Click += new System.EventHandler(this.botonBuscarPersona_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(16, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 30);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Id Persona:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1063, 149);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(149, 35);
+            this.dateTimePicker1.TabIndex = 60;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(443, 154);
+            this.label20.Location = new System.Drawing.Point(432, 177);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(135, 30);
             this.label20.TabIndex = 59;
@@ -313,11 +389,11 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(546, 105);
+            this.maskedTextBox1.Location = new System.Drawing.Point(541, 150);
             this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maskedTextBox1.Mask = "(999)000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(104, 25);
+            this.maskedTextBox1.Size = new System.Drawing.Size(111, 25);
             this.maskedTextBox1.TabIndex = 58;
             // 
             // label19
@@ -325,16 +401,17 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(16, 330);
+            this.label19.Location = new System.Drawing.Point(438, 44);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(135, 30);
             this.label19.TabIndex = 53;
             this.label19.Text = "Comentario:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // maskednum1
             // 
             this.maskednum1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskednum1.Location = new System.Drawing.Point(118, 296);
+            this.maskednum1.Location = new System.Drawing.Point(112, 333);
             this.maskednum1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maskednum1.Mask = "(999)000-0000";
             this.maskednum1.Name = "maskednum1";
@@ -349,7 +426,7 @@
             "Femenino",
             "Masculino",
             "No decirlo"});
-            this.comboBox1.Location = new System.Drawing.Point(609, 51);
+            this.comboBox1.Location = new System.Drawing.Point(604, 96);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 26);
@@ -359,7 +436,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(578, 158);
+            this.textBox2.Location = new System.Drawing.Point(573, 183);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(217, 25);
@@ -368,18 +445,19 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(151, 335);
+            this.textBox1.Location = new System.Drawing.Point(573, 49);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 25);
             this.textBox1.TabIndex = 51;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label22.Location = new System.Drawing.Point(443, 46);
+            this.label22.Location = new System.Drawing.Point(438, 91);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(171, 30);
             this.label22.TabIndex = 54;
@@ -390,7 +468,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label18.Location = new System.Drawing.Point(16, 292);
+            this.label18.Location = new System.Drawing.Point(10, 329);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 30);
             this.label18.TabIndex = 50;
@@ -404,7 +482,7 @@
             "Femenino",
             "Masculino",
             "No decirlo"});
-            this.combotlf1.Location = new System.Drawing.Point(181, 250);
+            this.combotlf1.Location = new System.Drawing.Point(175, 287);
             this.combotlf1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combotlf1.Name = "combotlf1";
             this.combotlf1.Size = new System.Drawing.Size(186, 26);
@@ -416,7 +494,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label16.Location = new System.Drawing.Point(16, 245);
+            this.label16.Location = new System.Drawing.Point(10, 282);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(168, 30);
             this.label16.TabIndex = 48;
@@ -427,7 +505,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(443, 101);
+            this.label21.Location = new System.Drawing.Point(438, 146);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(100, 30);
             this.label21.TabIndex = 56;
@@ -436,7 +514,7 @@
             // txtdni
             // 
             this.txtdni.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdni.Location = new System.Drawing.Point(908, 330);
+            this.txtdni.Location = new System.Drawing.Point(928, 302);
             this.txtdni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(163, 25);
@@ -447,7 +525,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(847, 326);
+            this.label15.Location = new System.Drawing.Point(847, 296);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 30);
             this.label15.TabIndex = 46;
@@ -460,7 +538,7 @@
             this.combotipdni.Items.AddRange(new object[] {
             "Cedula",
             "Pasaporte"});
-            this.combotipdni.Location = new System.Drawing.Point(955, 281);
+            this.combotipdni.Location = new System.Drawing.Point(970, 251);
             this.combotipdni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combotipdni.Name = "combotipdni";
             this.combotipdni.Size = new System.Drawing.Size(186, 26);
@@ -472,7 +550,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(847, 281);
+            this.label14.Location = new System.Drawing.Point(847, 245);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(107, 30);
             this.label14.TabIndex = 44;
@@ -483,10 +561,10 @@
             this.combosexo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combosexo.FormattingEnabled = true;
             this.combosexo.Items.AddRange(new object[] {
-            "Femenino",
             "Masculino",
-            "No decirlo"});
-            this.combosexo.Location = new System.Drawing.Point(917, 235);
+            "Femenino",
+            "Otro"});
+            this.combosexo.Location = new System.Drawing.Point(955, 213);
             this.combosexo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combosexo.Name = "combosexo";
             this.combosexo.Size = new System.Drawing.Size(186, 26);
@@ -498,7 +576,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(847, 184);
+            this.label13.Location = new System.Drawing.Point(834, 154);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(223, 30);
             this.label13.TabIndex = 42;
@@ -507,62 +585,62 @@
             // txtcasa
             // 
             this.txtcasa.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcasa.Location = new System.Drawing.Point(914, 135);
+            this.txtcasa.Location = new System.Drawing.Point(914, 95);
             this.txtcasa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcasa.Name = "txtcasa";
             this.txtcasa.Size = new System.Drawing.Size(205, 25);
             this.txtcasa.TabIndex = 41;
             // 
-            // combosec
-            // 
-            this.combosec.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combosec.FormattingEnabled = true;
-            this.combosec.Location = new System.Drawing.Point(933, 50);
-            this.combosec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.combosec.Name = "combosec";
-            this.combosec.Size = new System.Drawing.Size(186, 26);
-            this.combosec.TabIndex = 40;
-            this.combosec.Text = "Seleccione sector";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(847, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 30);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Sector:";
-            // 
             // comboprov
             // 
+            this.comboprov.DataSource = this.provinciaBindingSource;
+            this.comboprov.DisplayMember = "nombre";
             this.comboprov.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboprov.FormattingEnabled = true;
-            this.comboprov.Location = new System.Drawing.Point(558, 219);
+            this.comboprov.Location = new System.Drawing.Point(553, 264);
             this.comboprov.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboprov.Name = "comboprov";
             this.comboprov.Size = new System.Drawing.Size(186, 26);
             this.comboprov.TabIndex = 38;
-            this.comboprov.Text = "Seleccione provincia";
+            this.comboprov.SelectedIndexChanged += new System.EventHandler(this.comboprov_SelectedIndexChanged);
+            // 
+            // provinciaBindingSource
+            // 
+            this.provinciaBindingSource.DataMember = "Provincia";
+            this.provinciaBindingSource.DataSource = this.dSProvincia;
+            // 
+            // dSProvincia
+            // 
+            this.dSProvincia.DataSetName = "DSProvincia";
+            this.dSProvincia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // combomun
             // 
             this.combomun.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combomun.FormattingEnabled = true;
-            this.combomun.Location = new System.Drawing.Point(558, 272);
+            this.combomun.Location = new System.Drawing.Point(553, 317);
             this.combomun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combomun.Name = "combomun";
             this.combomun.Size = new System.Drawing.Size(186, 26);
             this.combomun.TabIndex = 37;
-            this.combomun.Text = "Seleccione municipio";
+            this.combomun.SelectedIndexChanged += new System.EventHandler(this.combomun_SelectedIndexChanged);
+            // 
+            // municipioBindingSource
+            // 
+            this.municipioBindingSource.DataMember = "Municipio";
+            this.municipioBindingSource.DataSource = this.boseDataSet6;
+            // 
+            // boseDataSet6
+            // 
+            this.boseDataSet6.DataSetName = "boseDataSet6";
+            this.boseDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(847, 234);
+            this.label10.Location = new System.Drawing.Point(851, 204);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 30);
             this.label10.TabIndex = 35;
@@ -574,7 +652,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(847, 84);
+            this.label9.Location = new System.Drawing.Point(847, 47);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 30);
             this.label9.TabIndex = 31;
@@ -583,7 +661,7 @@
             // txtcalle
             // 
             this.txtcalle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcalle.Location = new System.Drawing.Point(917, 88);
+            this.txtcalle.Location = new System.Drawing.Point(914, 50);
             this.txtcalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcalle.Name = "txtcalle";
             this.txtcalle.Size = new System.Drawing.Size(202, 25);
@@ -594,7 +672,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(443, 266);
+            this.label8.Location = new System.Drawing.Point(438, 311);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 30);
             this.label8.TabIndex = 27;
@@ -605,7 +683,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(443, 213);
+            this.label3.Location = new System.Drawing.Point(438, 258);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 30);
             this.label3.TabIndex = 26;
@@ -614,7 +692,7 @@
             // txtcorreo
             // 
             this.txtcorreo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.Location = new System.Drawing.Point(105, 204);
+            this.txtcorreo.Location = new System.Drawing.Point(99, 241);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(273, 25);
@@ -623,7 +701,7 @@
             // txtnombre
             // 
             this.txtnombre.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(118, 95);
+            this.txtnombre.Location = new System.Drawing.Point(112, 132);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(259, 25);
@@ -632,7 +710,7 @@
             // txtapellido
             // 
             this.txtapellido.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtapellido.Location = new System.Drawing.Point(119, 151);
+            this.txtapellido.Location = new System.Drawing.Point(113, 188);
             this.txtapellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(258, 25);
@@ -653,7 +731,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(16, 199);
+            this.label6.Location = new System.Drawing.Point(10, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 30);
             this.label6.TabIndex = 11;
@@ -675,7 +753,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(16, 146);
+            this.label4.Location = new System.Drawing.Point(10, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 30);
             this.label4.TabIndex = 8;
@@ -686,7 +764,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(847, 131);
+            this.label2.Location = new System.Drawing.Point(851, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 30);
             this.label2.TabIndex = 7;
@@ -697,7 +775,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(16, 91);
+            this.label1.Location = new System.Drawing.Point(10, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 30);
             this.label1.TabIndex = 6;
@@ -980,19 +1058,46 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 98);
             this.toolStripMenuItem3.Text = "Pagos de Servicio";
             // 
-            // dateTimePicker1
+            // provinciaTableAdapter
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1063, 179);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(149, 35);
-            this.dateTimePicker1.TabIndex = 60;
+            this.provinciaTableAdapter.ClearBeforeFill = true;
+            // 
+            // municipioTableAdapter
+            // 
+            this.municipioTableAdapter.ClearBeforeFill = true;
+            // 
+            // dScompletoPaProbar
+            // 
+            this.dScompletoPaProbar.DataSetName = "DScompletoPaProbar";
+            this.dScompletoPaProbar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // combosec
+            // 
+            this.combosec.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combosec.FormattingEnabled = true;
+            this.combosec.Location = new System.Drawing.Point(547, 352);
+            this.combosec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.combosec.Name = "combosec";
+            this.combosec.Size = new System.Drawing.Size(186, 26);
+            this.combosec.TabIndex = 68;
+            this.combosec.SelectedIndexChanged += new System.EventHandler(this.combosec_SelectedIndexChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label23.Location = new System.Drawing.Point(432, 346);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(82, 30);
+            this.label23.TabIndex = 67;
+            this.label23.Text = "Sector:";
             // 
             // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 810);
+            this.ClientSize = new System.Drawing.Size(1486, 810);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClienteForm";
@@ -1007,10 +1112,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSProvincia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.municipioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boseDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dScompletoPaProbar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1044,8 +1154,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox combosec;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboprov;
         private System.Windows.Forms.ComboBox combomun;
         private System.Windows.Forms.TextBox txtcasa;
@@ -1097,5 +1205,18 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private DSProvincia dSProvincia;
+        private System.Windows.Forms.BindingSource provinciaBindingSource;
+        private DSProvinciaTableAdapters.ProvinciaTableAdapter provinciaTableAdapter;
+        private boseDataSet6 boseDataSet6;
+        private System.Windows.Forms.BindingSource municipioBindingSource;
+        private boseDataSet6TableAdapters.MunicipioTableAdapter municipioTableAdapter;
+        private DScompletoPaProbar dScompletoPaProbar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button botonBuscarPersona;
+        private System.Windows.Forms.Button botonBuscarDireccion;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox combosec;
+        private System.Windows.Forms.Label label23;
     }
 }
