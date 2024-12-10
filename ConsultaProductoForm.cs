@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace farmabit
 {
@@ -43,6 +45,7 @@ namespace farmabit
 
 
         }
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -52,6 +55,8 @@ namespace farmabit
         }
         private void ConsultaProductoForm_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'boseDataSet6.Producto' Puede moverla o quitarla según sea necesario.
+            this.productoTableAdapter.Fill(this.boseDataSet6.Producto);
 
         }
 
@@ -215,5 +220,55 @@ namespace farmabit
             dc.Show();
         }
 
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtbuscar.Text))
+                return;
+
+            string consulta = string.Empty;
+
+            if (rbnom.Checked)
+            {
+                consulta = $"select * from Producto where nombre='{txtbuscar.Text}'";
+            }
+            else if (rbRS.Checked)
+            {
+                consulta = $"select * from Producto where Registro_sanitario='{txtbuscar.Text}'";
+            }
+            else if (rblab.Checked)
+            {
+                consulta = $"select * from Producto where laboratorio='{txtbuscar.Text}'";
+            }
+
+            if (!string.IsNullOrEmpty(consulta))
+            {
+                try
+                {
+                    // Abrir la conexión
+                    conexion.Open();
+
+                    // Ejecutar la consulta
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+                    // No necesitas SqlCommand y SqlDataReader si ya llenaste el DataTable con SqlDataAdapter.
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores
+                    MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Asegurarte de cerrar la conexión siempre
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
+                    }
+                }
+            }
+        }
     }
 }

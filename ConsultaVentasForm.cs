@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static farmabit.FrmLogin;
 
 namespace farmabit
 {
@@ -43,6 +45,7 @@ namespace farmabit
 
 
         }
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -215,5 +218,90 @@ namespace farmabit
             dc.Show();
         }
 
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtbuscar.Text))
+                return;
+
+            string consulta = string.Empty;
+
+            // Verifica el criterio seleccionado y construye la consulta SQL
+            if (rbProducto.Checked) // Buscar por producto
+            {
+                consulta = $@"
+            SELECT 
+                p.IdPedido, 
+                p.FechaPedido, 
+                p.IdCliente, 
+                p.Estado, 
+                p.FechaEntrega, 
+                p.DireccionEntrega, 
+                dp.IdDetallePedido, 
+                dp.IdProducto, 
+                dp.Cantidad, 
+                dp.Precio
+            FROM 
+                Pedidos p
+            INNER JOIN 
+                DetallePedido dp
+            ON 
+                p.IdPedido = dp.IdPedido
+            WHERE 
+                dp.IdProducto LIKE '%{txtbuscar.Text}%'";
+            }
+            else if (rbCliente.Checked) // Buscar por cliente
+            {
+                consulta = $@"
+            SELECT 
+                p.IdPedido, 
+                p.FechaPedido, 
+                p.IdCliente, 
+                p.Estado, 
+                p.FechaEntrega, 
+                p.DireccionEntrega, 
+                dp.IdDetallePedido, 
+                dp.IdProducto, 
+                dp.Cantidad, 
+                dp.Precio
+            FROM 
+                Pedidos p
+            INNER JOIN 
+                DetallePedido dp
+            ON 
+                p.IdPedido = dp.IdPedido
+            WHERE 
+                p.IdCliente LIKE '%{txtbuscar.Text}%'";
+            }
+
+            if (!string.IsNullOrEmpty(consulta))
+            {
+                try
+                {
+                    // Abre la conexión
+                    conexion.Open();
+
+                    // Ejecuta la consulta
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    // Asigna los resultados al DataGridView
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores
+                    MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Cierra la conexión
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
+                    }
+                }
+            }
+        }
     }
 }
