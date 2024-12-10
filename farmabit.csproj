@@ -100,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="boseDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CajaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -598,8 +603,6 @@
     <None Include="boseDataSet5.xss">
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
     </None>
-<<<<<<< HEAD
-=======
     <None Include="boseDataSet6.xsc">
       <DependentUpon>boseDataSet6.xsd</DependentUpon>
     </None>
@@ -655,7 +658,6 @@
     <None Include="DSProvincia.xss">
       <DependentUpon>DSProvincia.xsd</DependentUpon>
     </None>
->>>>>>> 03cfb9099a77dab1196d6583a3c8129f3080e46d
     <None Include="packages.config" />
     <None Include="persona_proveedordataset.xsc">
       <DependentUpon>persona_proveedordataset.xsd</DependentUpon>

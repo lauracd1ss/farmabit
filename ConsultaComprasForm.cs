@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,7 @@ namespace farmabit
 
 
         }
+        SqlConnection conexion = new SqlConnection("server=localhost\\MSSQLSERVER2022;database=bose;integrated security=true");
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -215,5 +217,88 @@ namespace farmabit
             dc.Show();
         }
 
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtbuscar.Text))
+                return;
+
+            string consulta = string.Empty;
+
+            // Verifica cuál criterio está seleccionado y construye la consulta SQL
+            if (rbProducto.Checked) // Buscar por producto
+            {
+                consulta = $@"
+            SELECT 
+                c.IdCompra, 
+                c.IdProveedor, 
+                c.FechaCompra, 
+                c.Observaciones, 
+                d.IdDetalleCompra, 
+                d.IdProducto, 
+                d.Cantidad, 
+                d.PrecioUnitario, 
+                d.Subtotal
+            FROM 
+                Compras c
+            INNER JOIN 
+                DetalleCompras d
+            ON 
+                c.IdCompra = d.IdCompra
+            WHERE 
+                d.IdProducto LIKE '%{txtbuscar.Text}%'";
+            }
+            else if (rbProveedor.Checked) // Buscar por proveedor
+            {
+                consulta = $@"
+            SELECT 
+                c.IdCompra, 
+                c.IdProveedor, 
+                c.FechaCompra, 
+                c.Observaciones, 
+                d.IdDetalleCompra, 
+                d.IdProducto, 
+                d.Cantidad, 
+                d.PrecioUnitario, 
+                d.Subtotal
+            FROM 
+                Compras c
+            INNER JOIN 
+                DetalleCompras d
+            ON 
+                c.IdCompra = d.IdCompra
+            WHERE 
+                c.IdProveedor LIKE '%{txtbuscar.Text}%'";
+            }
+
+            if (!string.IsNullOrEmpty(consulta))
+            {
+                try
+                {
+                    // Abre la conexión
+                    conexion.Open();
+
+                    // Ejecuta la consulta
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    // Asigna los resultados al DataGridView
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores
+                    MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Asegúrate de cerrar la conexión
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
+                    }
+                }
+            }
+        }
     }
 }
