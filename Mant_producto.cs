@@ -383,7 +383,7 @@ namespace farmabit
             rbtnNecesitaRecetaSi.Checked = false;
             rbtnNecesitaRecetaNo.Checked = false;
             rbtnActivo.Checked = false;
-            rbtnInactivo.Checked = false;
+            rbtnDesactivo.Checked = false;
 
             // Opcionalmente, puedes agregar un mensaje de éxito o información
             MessageBox.Show("Campos limpiados correctamente.");

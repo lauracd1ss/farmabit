@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boseDataSet.cs">
+      <DependentUpon>boseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="boseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="boseDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="CajaForm.cs">
       <SubType>Form</SubType>
@@ -174,6 +182,32 @@
     </Compile>
     <Compile Include="Descuentos.Designer.cs">
       <DependentUpon>Descuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="direccionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="direccionForm.Designer.cs">
+      <DependentUpon>direccionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DScompletoPaProbar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DScompletoPaProbar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSDireccion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDireccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDireccionBuena.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDireccionBuena.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSProvincia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSProvincia.xsd</DependentUpon>
     </Compile>
     <Compile Include="EmpleadoForm.cs">
       <SubType>Form</SubType>
@@ -264,6 +298,12 @@
     </Compile>
     <Compile Include="PagoTLFVivaForm.Designer.cs">
       <DependentUpon>PagoTLFVivaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personaForm.Designer.cs">
+      <DependentUpon>personaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="persona_proveedordataset.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -395,6 +435,9 @@
     <EmbeddedResource Include="Descuentos.resx">
       <DependentUpon>Descuentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="direccionForm.resx">
+      <DependentUpon>direccionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmpleadoForm.resx">
       <DependentUpon>EmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagoTLFVivaForm.resx">
       <DependentUpon>PagoTLFVivaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personaForm.resx">
+      <DependentUpon>personaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -556,6 +602,61 @@
     </None>
     <None Include="boseDataSet5.xss">
       <DependentUpon>boseDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet6.xsc">
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="boseDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>boseDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="boseDataSet6.xss">
+      <DependentUpon>boseDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DScompletoPaProbar.xsc">
+      <DependentUpon>DScompletoPaProbar.xsd</DependentUpon>
+    </None>
+    <None Include="DScompletoPaProbar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DScompletoPaProbar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DScompletoPaProbar.xss">
+      <DependentUpon>DScompletoPaProbar.xsd</DependentUpon>
+    </None>
+    <None Include="DSDireccion.xsc">
+      <DependentUpon>DSDireccion.xsd</DependentUpon>
+    </None>
+    <None Include="DSDireccion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDireccion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSDireccion.xss">
+      <DependentUpon>DSDireccion.xsd</DependentUpon>
+    </None>
+    <None Include="dsDireccionBuena.xsc">
+      <DependentUpon>dsDireccionBuena.xsd</DependentUpon>
+    </None>
+    <None Include="dsDireccionBuena.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDireccionBuena.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDireccionBuena.xss">
+      <DependentUpon>dsDireccionBuena.xsd</DependentUpon>
+    </None>
+    <None Include="DSProvincia.xsc">
+      <DependentUpon>DSProvincia.xsd</DependentUpon>
+    </None>
+    <None Include="DSProvincia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSProvincia.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSProvincia.xss">
+      <DependentUpon>DSProvincia.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="persona_proveedordataset.xsc">
